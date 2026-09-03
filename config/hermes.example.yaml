@@ -1,0 +1,25 @@
+# Public, non-operational template.
+# Hermes Agent configuration keys can vary by release. Validate this structure
+# against the installed Hermes v0.21.0 documentation before using it.
+# Keep actual secrets in a protected environment or secret manager.
+
+runtime:
+  api_mode: chat_completions
+  terminal_backend: local
+
+provider:
+  # Use the provider configuration supported by your Hermes installation.
+  # The real endpoint must never be committed.
+  name: YOUR_PROVIDER_NAME
+  base_url: YOUR_PRIVATE_OPENAI_COMPATIBLE_ENDPOINT
+  api_key_env: API_KEY
+  model: openai/gpt-5.6-luna
+
+telegram:
+  bot_token_env: TELEGRAM_BOT_TOKEN
+  allowlist_user_id_env: TELEGRAM_USER_ID
+
+# Fallback provider: planned, not configured in the current deployment.
+# Add only after separately testing its provider schema and behavior.
+# fallback:
+#   name: FUTURE_FALLBACK_PROVIDER
