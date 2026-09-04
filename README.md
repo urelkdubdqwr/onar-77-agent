@@ -1,5 +1,7 @@
 # ONAR-HERMES-AGENT 🤖🐟
 
+![ONAR banner](assets/banner.jpg)
+
 ```
       gm ser ☕         ~~~  ~~~  ~~~
                           >)))'>   🐟
