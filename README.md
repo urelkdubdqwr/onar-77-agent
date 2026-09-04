@@ -41,6 +41,7 @@ Hermes is intentionally kept inside Debian. This avoids duplicate Hermes install
 ## Documentation
 
 - [Architecture](docs/architecture.md)
+- [Two-Supabase OHA database architecture](docs/OHA-DATABASE.md)
 - Local Android deployment: [prerequisites and installation](docs/deployment/local-android.md)
 - [Planned VPS deployment](docs/deployment/vps.md)
 - [Safe mode](docs/operations/safe-mode.md)
