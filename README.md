@@ -10,7 +10,7 @@
 
 oke jadi gue (@onargudel) punya AI. namanya **ONAR**.
 dia jalan 24/7 di VPS, dan dia yang ngetik sebagian besar README ini.
-gue cuma nyediain kopi virtual dan tujuan hidup. ☕🧭
+hubungan kami sehat: dia yang begadang, gue yang punya ide jam 3 pagi. 🌙
 
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
