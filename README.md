@@ -1,93 +1,74 @@
 # ONAR-HERMES-AGENT
 
-ONAR-HERMES-AGENT is a security-conscious documentation and deployment framework for running Hermes Agent as a controllable personal AI system. It records reproducible architecture, operational boundaries, and migration concepts without publishing private machine state or credentials.
+> This is not a chatbot. This is a whole operating system for one degen and his AI.
 
-> **Status:** Current deployment is Hermes Agent v0.21.0 running natively on an Ubuntu 24.04 LTS VPS (x86_64). The primary provider is a private OpenAI-compatible endpoint. Telegram control, the local terminal backend, and a native systemd user service are working. A FreeLLMAPI fallback proxy is installed and wired into the Hermes fallback chain; provider keys for the proxy are not yet added, so failover is not yet live. The previous Android + Termux + Debian PRoot deployment is retained as historical reference.
+**ONAR-HERMES-AGENT** is the public engineering record of HERMES — a [Hermes Agent](https://hermes-agent.nousresearch.com) deployment running 24/7 as a personal Web3 intelligence + execution system. CT monitoring, airdrop/whitelist tracking, on-chain ops, social presence, dan semua automation yang bikin satu orang kerja kayak tim.
 
-## Goals
+Repo ini isinya dokumentasi + safe templates doang. **No secrets, no endpoints, no machine state.** Yang privat ya privat, bro.
 
-- Document a real Android → Termux → Debian PRoot deployment.
-- Keep public documentation separate from secrets and deployment-specific state.
-- Provide safe operating procedures for Telegram-controlled work.
-- Make a future move to a native Linux VPS understandable and repeatable.
-- Establish a portfolio-grade engineering record without overstating test results.
+## Current status 🟢
 
-## Architecture
+Hermes Agent v0.21.0, native di Ubuntu 24.04 LTS VPS (x86_64). Dulu hidup di HP Android via Termux + Debian PRoot — udah migrate, dan itu cerita tersendiri di [docs](docs/deployment/local-android.md).
 
 ```text
-Ubuntu 24.04 LTS VPS (x86_64, native)
-└── Hermes Agent v0.21.0
-    ├── Primary OpenAI-compatible LLM provider (current)
-    ├── Telegram gateway (current)
-    ├── Local terminal backend (current)
-    └── FreeLLMAPI fallback proxy (installed; awaiting provider keys)
+Ubuntu 24.04 VPS (native, systemd user services)
+└── HERMES (Hermes Agent)
+    ├── Primary: private OpenAI-compatible provider (endpoint gak akan lo liat di sini)
+    ├── Telegram gateway — command center, allowlist-only
+    ├── Supabase MCP — OAuth, read/write DB intel (destructive tools locked)
+    ├── MetaMask Agentic CLI (mm) — server-side wallet, guard mode
+    ├── Browser automation + web research stack
+    ├── Skills system — 60+ procedural memories, self-improving
+    └── Cron army — watchdogs, scouts, syncs (semua di-gate, no rogue loops)
 ```
 
-Hermes runs directly on the VPS userspace with native systemd user services. The previous Android + Termux + Debian PRoot layout kept Hermes inside Debian to avoid duplicate installations; that boundary no longer applies on native Linux.
+## What it actually does 🧠
 
-## Current implementation
+- **Intel pipeline**: CT sources → scoring → Supabase (two-DB architecture: `smartct-OHA` buat signal quality, `web3track-OHA` buat whitelist/testnet/campaign tracking) → Notion dashboard buat human viewing
+- **Whitelist lifecycle**: watchlist → WL won → mint deadline → watchdog nge-DM dengan countdown. Gak ada cerita eligible tapi kelewat mint.
+- **Smart CT scoring**: every tracked account di-score (reach, follower ratio, signal quality). Top leaderboard = maximum concern.
+- **On-chain execution**: MetaMask agent wallet — server-side signing, spend limits, burner-only. Private keys never touch this box. (We audited a viral "free mint bot" once. It wanted raw keys in a `.env`. That's a heist with a README.)
+- **Social ops**: X/Twitter presence management as @onargudel — replies, quote takes, CT-native yapping with actual substance.
 
-- **Current:** Hermes Agent v0.21.0 on Ubuntu 24.04 LTS (x86_64), native install.
-- **Current:** Primary custom OpenAI-compatible provider; the endpoint is private and is never documented here.
-- **Current:** `chat_completions` API mode.
-- **Current:** Local terminal backend.
-- **Current:** Telegram gateway with an allowlist; operation verified.
-- **Current:** Native systemd user services work (unlike the previous PRoot deployment).
-- **Installed, not yet live:** FreeLLMAPI fallback proxy — a source-built Node service on loopback port 3001, registered as a systemd user service and wired into the Hermes fallback chain as a custom OpenAI-compatible provider. It routes to free-tier providers, but no provider keys have been added to it yet, so failover will return "no providers configured" until keys are provisioned through its dashboard (accessed via SSH tunnel, never exposed publicly).
-- **Completed:** Migration from Android + Termux + Debian PRoot to this VPS.
-- **Historical reference:** the Android deployment guide remains in `docs/deployment/local-android.md`.
+## What we tried and killed 💀
 
-## Documentation
+Honest log, because pretending everything works is for marketing teams:
+
+- **FreeLLMAPI** (free-tier LLM proxy) — worked, failover proven via keyless providers, tapi maintenance tax-nya lebih gede dari nilainya. Removed.
+- **9Router** — installed, audited, loopback-locked, then user said "bersihin aja". Gone.
+- **Google Sheets as intel dashboard** — looked like a spreadsheet from 2009. Replaced with Notion. Wiped permanent.
+- **Supabase PKCE login scripts** — hardened to death (OAuth state, strict callback, key-type guards — see commit `2259b90`), tapi MCP OAuth turned out to be the better path. Scripts stay as legacy fallback.
+
+## Security model 🔒
+
+Read [SECURITY.md](SECURITY.md). Ringkasannya:
+
+- Secrets cuma di `.env` lokal, never Git, never chat logs
+- MCP tool allowlists — HERMES literally cannot pause projects or pull API keys
+- On-chain = agent burner wallet with guard mode, spend limits, no raw keys on disk
+- Destructive ops butuh konfirmasi eksplisit
+- Semua exposed credential di-revoke on sight (yes, including the ones pasted in Telegram at 2am)
+
+## Docs 📚
 
 - [Architecture](docs/architecture.md)
-- [Two-Supabase OHA database architecture](docs/OHA-DATABASE.md)
-- Local Android deployment: [prerequisites and installation](docs/deployment/local-android.md)
+- [Two-Supabase OHA database design](docs/OHA-DATABASE.md)
 - [VPS deployment (completed)](docs/deployment/vps.md)
-- [Safe mode](docs/operations/safe-mode.md)
-- [Telegram operations](docs/operations/telegram.md)
-- [Continuity workflow](docs/operations/continuity.md)
-- [Security policy](SECURITY.md)
-- [Example configuration](config/hermes.example.yaml)
-- [Environment template](config/.env.example)
+- [Android/Termux legacy guide](docs/deployment/local-android.md)
+- [Safe mode](docs/operations/safe-mode.md) · [Telegram ops](docs/operations/telegram.md) · [Continuity](docs/operations/continuity.md)
+- [Example config](config/hermes.example.yaml) · [.env template](config/.env.example)
 
-## Security model
+## Roadmap 🛣️
 
-This repository contains public documentation and safe templates only. Secrets belong in a local `.env` or an equivalent secret store and must be injected at runtime. Never commit provider endpoints, API keys, Telegram tokens, user IDs, cookies, session data, private keys, passwords, or machine-specific configuration. See [SECURITY.md](SECURITY.md) before copying any example.
+1. ~~Native VPS migration~~ ✅ done
+2. ~~Supabase MCP + Notion intel layer~~ ✅ live
+3. X API scout — auto-detect WL announcements dari tracked accounts (blocked on: budget, obviously)
+4. Outcome tracking buat Smart CT — signals → results → accuracy scoring
+5. More execution paths: testnet farming automation, campaign multipliers
+6. Automation only after security + recovery are proven. No cowboy deploys.
 
-## Provider architecture
+## Contributing
 
-Hermes is treated as the orchestration layer, independent of the model provider. The current deployment uses one private OpenAI-compatible provider through `chat_completions`. A FreeLLMAPI proxy is now installed as the first fallback entry in the Hermes fallback chain (custom provider, `auto` routing model, loopback-only base URL, key referenced by environment variable name — never inlined). Its end-to-end failover behavior is **not yet verified** because no upstream provider keys have been added to the proxy; until then the fallback path returns a "no providers configured" error rather than serving traffic.
+This is a personal system's public record, bukan open source project dengan issue queue. Tapi kalau lo nemu kebocoran info privat di sini — [report it](SECURITY.md), that's actually a critical bug.
 
-## Historical: Local Android deployment
-
-The original deployment path was:
-
-```text
-Termux → Debian PRoot → Hermes Agent
-```
-
-The guide documents prerequisites, installation flow, verification, Telegram setup, foreground gateway testing, and the systemd/PRoot limitation. It does not contain device paths, credentials, or private endpoint values. It is retained as the reference for how the system behaved before the VPS migration.
-
-## Local → VPS migration (completed)
-
-The migration preserved the logical Hermes configuration while replacing the runtime substrate:
-
-```text
-Android + Termux + Debian PRoot
-                ↓
-Ubuntu 24.04 LTS VPS + native Linux (x86_64)
-```
-
-Secrets were provisioned directly on the destination as protected local files. They were not copied through Git, pasted into issues, or embedded in deployment scripts. Native systemd user services replaced the PRoot foreground workaround.
-
-## Roadmap
-
-1. ~~Design a native-Linux VPS deployment and validate it separately.~~ Done — running on Ubuntu 24.04.
-2. Provision provider keys into the FreeLLMAPI proxy and verify end-to-end failover (kill/retry test against the primary).
-3. Keep the current deployment documented and reproducible.
-4. Add repeatable operational checks and safer maintenance procedures.
-5. Add automation only after its security and recovery behavior are verified.
-
-## Scope and contribution
-
-This repository is primarily a public engineering and operations record. Contributions should preserve the distinction between **CURRENT**, **PLANNED**, and **FUTURE** behavior and must pass a secret-safety review before publication.
+Keep docs honest: **CURRENT** vs **PLANNED** vs **FUTURE**, no overclaiming. And never, ever commit a secret. Wagmi, but with receipts. 🫡
