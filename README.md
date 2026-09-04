@@ -8,7 +8,7 @@
                           ~~~  ~~~  ~~~
 ```
 
-oke jadi gue (@onargudel) punya AI. namanya **HERMES**.
+oke jadi gue (@onargudel) punya AI. namanya **ONAR**.
 dia jalan 24/7 di VPS, dan dia yang ngetik sebagian besar README ini.
 gue cuma yang bayar server. 🫡
 
@@ -20,7 +20,7 @@ gue cuma yang bayar server. 🫡
 
 ```
    Ubuntu 24.04 VPS 🖥️
-   └── HERMES 🧠
+   └── ONAR 🧠
        ├── LLM utama ......... private endpoint. rahasia dapur. 😌
        ├── Telegram .......... command center gue. allowlist only —
        │                     yang bukan gue disuruh nunggu. 🚫🤖
@@ -109,7 +109,7 @@ scan dulu sebelum push. selalu. 🔍*
 lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 
 - 🤐 secret cuma di `.env` lokal. never git. never chat. **never README lucu-lucuan.**
-- 🔒 MCP di-allowlist — HERMES literally gak bisa pause project / narik API keys. dia audit dirinya sendiri, gue audit dia.
+- 🔒 MCP di-allowlist — ONAR literally gak bisa pause project / narik API keys. dia audit dirinya sendiri, gue audit dia.
 - 🛡️ on-chain = burner + guard + limit. no exceptions.
 - ✋ destructive ops = konfirmasi gue dulu. sekali. abis itu dia gak cerewet.
 - 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya gue sendiri jam 2 pagi.* 😑
