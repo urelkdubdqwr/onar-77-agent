@@ -10,7 +10,7 @@
 
 oke jadi gue (@onargudel) punya AI. namanya **ONAR**.
 dia jalan 24/7 di VPS, dan dia yang ngetik sebagian besar README ini.
-peran gue? *Creative Director.* artinya gue cuma baca, manggut-manggut, dan minta "lebih lucu". 🎬
+gue cuma nyediain kopi virtual dan tujuan hidup. ☕🧭
 
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
