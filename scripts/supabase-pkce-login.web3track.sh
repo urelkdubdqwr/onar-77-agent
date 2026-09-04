@@ -3,27 +3,35 @@ set -euo pipefail
 
 # ============================================================
 # ONAR-HERMES-AGENT
-# Supabase Google OAuth PKCE Login
+# Supabase Google OAuth PKCE Login (hardened)
+# ============================================================
+# Security rules (NEVER violate):
+#   - Never print access_token / refresh_token / session contents
+#   - Never send session files to chat, logs, or diagnostics
+#   - Never commit session files (see .gitignore)
+#   - Never use SUPABASE_SERVICE_ROLE_KEY in this flow (anon/publishable only)
 # ============================================================
 
 REDIRECT_HOST="127.0.0.1"
 REDIRECT_PORT="3000"
 REDIRECT_URI="http://${REDIRECT_HOST}:${REDIRECT_PORT}"
 
-SESSION_FILE="${HOME}/.config/hermes/web3track-session.json"
+SESSION_FILE="${HOME}/.config/hermes/supabase-session.web3track.json"
 
 echo "=== HERMES Supabase PKCE Login ==="
 echo
 
 # ------------------------------------------------------------
-# Load configuration
+# Load ONLY the required variables from .env (no wholesale source)
 # ------------------------------------------------------------
 
 if [[ -f ".env" ]]; then
-    set -a
-    # shellcheck disable=SC1091
-    source .env
-    set +a
+    if [[ -z "${SUPABASE_REF:-}" ]]; then
+        SUPABASE_REF="$(grep -m1 '^SUPABASE_REF=' .env | cut -d= -f2- || true)"
+    fi
+    if [[ -z "${SUPABASE_ANON_KEY:-}" ]]; then
+        SUPABASE_ANON_KEY="$(grep -m1 -E '^(SUPABASE_ANON_KEY|SUPABASE_PUBLISHABLE_KEY)=' .env | cut -d= -f2- || true)"
+    fi
 fi
 
 if [[ -z "${SUPABASE_REF:-}" ]]; then
@@ -33,6 +41,33 @@ fi
 if [[ -z "${SUPABASE_ANON_KEY:-}" ]]; then
     read -rsp "Supabase publishable/anon key: " SUPABASE_ANON_KEY
     echo
+fi
+
+# ------------------------------------------------------------
+# Validate SUPABASE_REF (reject malformed input)
+# ------------------------------------------------------------
+
+if [[ ! "${SUPABASE_REF}" =~ ^[A-Za-z0-9-]{8,40}$ ]]; then
+    echo "ERROR: SUPABASE_REF has an unexpected format (expected 8-40 chars, alphanumeric/hyphen)."
+    exit 1
+fi
+
+# ------------------------------------------------------------
+# Reject service-role keys (must never enter this flow)
+# ------------------------------------------------------------
+
+if [[ "${SUPABASE_ANON_KEY}" == sb_secret_* ]]; then
+    echo "ERROR: sb_secret_* is a service/secret key. This flow requires the anon/publishable key."
+    exit 1
+fi
+
+if [[ "${SUPABASE_ANON_KEY}" == eyJ* ]]; then
+    # Legacy JWT anon key — decode payload and verify role is not service_role
+    JWT_ROLE="$(printf '%s' "${SUPABASE_ANON_KEY}" | cut -d. -f2 | base64 -d 2>/dev/null | grep -o '"role"[[:space:]]*:[[:space:]]*"[^"]*"' | grep -o '[a-z_]*"$' | tr -d '"' || true)"
+    if [[ "${JWT_ROLE}" == "service_role" ]]; then
+        echo "ERROR: JWT supplied is a service_role key. This flow requires the anon key."
+        exit 1
+    fi
 fi
 
 SUPABASE_URL="https://${SUPABASE_REF}.supabase.co"
@@ -49,7 +84,7 @@ for cmd in openssl curl python3; do
 done
 
 # ------------------------------------------------------------
-# Generate PKCE
+# Generate PKCE + OAuth state
 # ------------------------------------------------------------
 
 CODE_VERIFIER="$(
@@ -66,12 +101,14 @@ CODE_CHALLENGE="$(
     tr -d '='
 )"
 
+OAUTH_STATE="$(openssl rand -hex 32)"
 
 # ------------------------------------------------------------
-# Start localhost callback catcher
+# Start localhost callback catcher (strict validation)
 # ------------------------------------------------------------
 
 TMP_DIR="$(mktemp -d)"
+chmod 700 "$TMP_DIR"
 CODE_FILE="${TMP_DIR}/code"
 
 cleanup() {
@@ -85,7 +122,8 @@ echo "Starting OAuth callback listener..."
 echo "Callback: ${REDIRECT_URI}"
 echo
 
-python3 - "$REDIRECT_HOST" "$REDIRECT_PORT" "$CODE_FILE" <<'PY' &
+python3 - "$REDIRECT_HOST" "$REDIRECT_PORT" "$CODE_FILE" "$OAUTH_STATE" <<'PY' &
+import os
 import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import urlparse, parse_qs
@@ -93,30 +131,17 @@ from urllib.parse import urlparse, parse_qs
 host = sys.argv[1]
 port = int(sys.argv[2])
 code_file = sys.argv[3]
+expected_state = sys.argv[4]
 
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, format, *args):
         pass
 
-    def do_GET(self):
-        parsed = urlparse(self.path)
-        params = parse_qs(parsed.query)
-
-        code = params.get("code", [""])[0]
-        error = params.get("error", [""])[0]
-
-        if error:
-            with open(code_file, "w") as f:
-                f.write("ERROR:" + error)
-        elif code:
-            with open(code_file, "w") as f:
-                f.write(code)
-
+    def _reply(self, ok):
         self.send_response(200)
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.end_headers()
-
-        if code:
+        if ok:
             self.wfile.write(
                 b"<html><body><h2>Login berhasil.</h2>"
                 b"<p>Kembali ke terminal Hermes.</p></body></html>"
@@ -127,17 +152,43 @@ class Handler(BaseHTTPRequestHandler):
                 b"<p>Kembali ke terminal Hermes.</p></body></html>"
             )
 
+    def do_GET(self):
+        parsed = urlparse(self.path)
+        # Only the root callback path is accepted
+        if parsed.path not in ("/", ""):
+            self._reply(False)
+            return
+        params = parse_qs(parsed.query)
+        code = params.get("code", [""])[0]
+        state = params.get("state", [""])[0]
+        error = params.get("error", [""])[0]
+
+        ok = bool(code and state == expected_state)
+        # Reply FIRST, then capture — so the browser always gets a clean page
+        self._reply(ok or bool(error))
+        if error:
+            with open(code_file, "w") as f:
+                f.write("ERROR:" + error)
+            os.chmod(code_file, 0o600)
+        elif ok:
+            with open(code_file, "w") as f:
+                f.write(code)
+            os.chmod(code_file, 0o600)
+        # else: mismatched/missing state or bare code -> rejected, keep listening
+
 server = HTTPServer((host, port), Handler)
-server.handle_request()
+# Keep serving until a valid code/error is captured (rejects junk requests)
+while not os.path.exists(code_file):
+    server.handle_request()
 PY
 
 CALLBACK_PID=$!
 
 # ------------------------------------------------------------
-# Build authorization URL
+# Build authorization URL (with state)
 # ------------------------------------------------------------
 
-AUTH_URL="${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1], safe=""))' "$REDIRECT_URI")&code_challenge=${CODE_CHALLENGE}&code_challenge_method=S256&flow_type=pkce"
+AUTH_URL="${SUPABASE_URL}/auth/v1/authorize?provider=google&redirect_to=$(python3 -c 'import urllib.parse,sys; print(urllib.parse.quote(sys.argv[1], safe=""))' "$REDIRECT_URI")&state=${OAUTH_STATE}&code_challenge=${CODE_CHALLENGE}&code_challenge_method=S256&flow_type=pkce"
 
 echo "Opening Google OAuth..."
 echo
@@ -187,6 +238,7 @@ if [[ ! -s "$CODE_FILE" ]]; then
 fi
 
 CODE="$(cat "$CODE_FILE")"
+rm -f "$CODE_FILE"   # burn the one-time code immediately
 
 if [[ "$CODE" == ERROR:* ]]; then
     echo "OAuth error: ${CODE#ERROR:}"
@@ -197,13 +249,15 @@ echo "OAuth code diterima."
 echo "Menukar code ke Supabase session..."
 
 # ------------------------------------------------------------
-# Exchange PKCE code for session
+# Exchange PKCE code for session (bounded timeouts)
 # ------------------------------------------------------------
 
 RESPONSE="$(
     curl -fsS \
+        --connect-timeout 10 \
+        --max-time 30 \
         "${SUPABASE_URL}/auth/v1/token?grant_type=pkce" \
-        -H "apikey: ${SUPABASE_ANON_KEY}" \
+        -H "apikey: ${SUPA...EY}" \
         -H "Content-Type: application/json" \
         -d "{
             \"auth_code\": \"${CODE}\",
@@ -213,7 +267,7 @@ RESPONSE="$(
 )"
 
 # ------------------------------------------------------------
-# Validate response
+# Validate response (sanitized output only — never dump raw)
 # ------------------------------------------------------------
 
 if ! printf '%s' "$RESPONSE" | python3 -c '
@@ -224,17 +278,27 @@ if not data.get("access_token"):
 '; then
     echo
     echo "ERROR: Supabase tidak mengembalikan access token."
-    echo
-    printf '%s\n' "$RESPONSE"
+    # Print only a sanitized summary, never tokens
+    printf '%s' "$RESPONSE" | python3 -c '
+import json, sys
+try:
+    data = json.load(sys.stdin)
+except Exception:
+    print("(unparseable response)"); raise SystemExit(0)
+msg = data.get("message") or data.get("error_description") or data.get("error") or "unknown error"
+print("Reason:", str(msg)[:200])
+'
     exit 1
 fi
 
 # ------------------------------------------------------------
-# Save session securely
+# Save session securely (dir 700, file 600)
 # ------------------------------------------------------------
 
 mkdir -p "$(dirname "$SESSION_FILE")"
+chmod 700 "$(dirname "$SESSION_FILE")"
 
+umask 077
 printf '%s' "$RESPONSE" > "$SESSION_FILE"
 chmod 600 "$SESSION_FILE"
 
@@ -248,6 +312,9 @@ echo "  ${SESSION_FILE}"
 echo
 echo "Permissions:"
 ls -l "$SESSION_FILE"
+echo
+echo "RULE: session file berisi token sensitif."
+echo "      JANGAN pernah di-commit, di-print, dikirim ke chat, atau masuk log."
 echo
 
 # ------------------------------------------------------------

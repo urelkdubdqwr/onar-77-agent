@@ -73,3 +73,7 @@ proot-rootfs/
 deployment-output/
 *.tar.gz
 *.zip
+
+# Supabase session files (tokens — never commit)
+supabase-session*.json
+*supabase-session*
