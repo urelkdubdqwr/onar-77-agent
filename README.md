@@ -173,6 +173,9 @@ rule emas: **automation masuk setelah security + recovery kebukti.** no cowboy d
 
 ## 🤝 kontribusi
 
+**Lisensi repo ini: ALL RIGHTS RESERVED.** boleh dibaca, boleh ditiru ilmunya,
+jangan ditiru filenya. look, don't take. 🫡🐟
+
 ini public record dari personal system, bukan open source dengan issue queue.
 tapi nemu **info privat bocor** di sini? report. itu bukan feature request, itu **critical bug** 🐛🚨
 
