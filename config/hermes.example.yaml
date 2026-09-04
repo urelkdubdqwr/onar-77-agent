@@ -19,7 +19,11 @@ telegram:
   bot_token_env: TELEGRAM_BOT_TOKEN
   allowlist_user_id_env: TELEGRAM_USER_ID
 
-# Fallback provider: planned, not configured in the current deployment.
-# Add only after separately testing its provider schema and behavior.
+# Fallback provider: a FreeLLMAPI proxy is installed and wired as a custom
+# OpenAI-compatible fallback (loopback base URL, key referenced by env var
+# name). It is not yet serving traffic because no upstream provider keys
+# have been added. Add keys through the dashboard over an SSH tunnel.
 # fallback:
-#   name: FUTURE_FALLBACK_PROVIDER
+#   name: freellmapi
+#   base_url: http://127.0.0.1:3001/v1
+#   api_key_env: FREELLMAPI_KEY

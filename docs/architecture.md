@@ -3,28 +3,24 @@
 ## Current topology
 
 ```text
-Android
-└── Termux
-    └── Debian 13 Trixie (PRoot, aarch64)
-        └── Hermes Agent v0.21.0
-            ├── Primary OpenAI-compatible LLM provider
-            ├── Telegram gateway
-            ├── Local terminal backend
-            └── Future fallback provider
+Ubuntu 24.04 LTS VPS (x86_64, native)
+└── Hermes Agent v0.21.0
+    ├── Primary OpenAI-compatible LLM provider
+    ├── Telegram gateway
+    ├── Local terminal backend
+    └── FreeLLMAPI fallback proxy (systemd user service, loopback :3001)
 ```
 
-The current runtime is local and foreground-oriented. Hermes is installed and run inside Debian PRoot rather than separately in Termux. This keeps one authoritative installation and avoids version drift between host and guest environments.
+Hermes runs natively on the VPS userspace. Process supervision uses native systemd user services, which work here (they did not under the previous Debian PRoot deployment on Android). The FreeLLMAPI proxy listens only on 127.0.0.1; remote administration reaches it through an SSH tunnel, never through a public bind.
 
 ## Responsibilities
 
-- **Android:** physical host device.
-- **Termux:** user-space entry point and process host.
-- **Debian PRoot:** isolated Linux userspace; it is not a full virtual machine.
+- **VPS (Ubuntu 24.04, x86_64):** physical/virtual host and native Linux userspace.
 - **Hermes Agent:** orchestration, model calls, gateway integration, and terminal operations.
 - **Primary provider:** current private OpenAI-compatible endpoint, configured outside this repository.
 - **Telegram gateway:** remote control surface protected by a bot token and allowlist.
 - **Local terminal:** current command-execution backend.
-- **Fallback provider:** planned resilience component; not configured.
+- **FreeLLMAPI proxy:** fallback resilience component; installed and wired into the Hermes fallback chain, but not yet serving traffic because no upstream provider keys are configured.
 
 ## Boundaries and state
 
@@ -38,6 +34,6 @@ Keep these categories separate:
 
 Only sanitized source and documentation should be committed. Operational and deployment-specific state stays on the machine or in an appropriate protected system.
 
-## Planned migration
+## Migration history
 
-The logical architecture can move from Android + Termux + Debian PRoot to VPS + native Linux. The model-provider and Telegram interfaces remain conceptual boundaries; the process supervisor and filesystem layout can change. Provision secrets directly on the VPS, validate the configuration there, and never use Git as a secret transport.
+The architecture moved from Android + Termux + Debian PRoot to a VPS with native Linux. The model-provider and Telegram interfaces remained conceptual boundaries; the process supervisor changed from foreground-only (PRoot could not run systemd user services) to native systemd user services. Secrets were provisioned directly on the VPS; Git was never used as a secret transport.
