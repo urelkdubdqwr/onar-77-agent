@@ -70,6 +70,14 @@ abis itu **dia yang ngejerit di DM gue**:
 
 pernah gak sih lo eligible tapi ketiduran? nah. gak lagi. 🫡
 
+<br>
+
+> 📢 **SISIPAN:** baca ini sampe sini doang udah bikin lo pinter dari 90% farmer.
+> tinggal follow [@onargudel](https://x.com/onargudel) buat pelan-pelan jadi sisanya. 🐟
+> *— iklan ini dibayar dengan 1 follow. iklan berikutnya gak akan sefair ini.*
+
+<br>
+
 ### ⛓️ on-chain
 
 swap, bridge, mint, claim — via **burner wallet** + spend limits.
@@ -79,6 +87,11 @@ gue audit (clean sih kodenya), tapi tetep:
 > *"tool yang butuh private key lo buat kerja... itu bukan bot. itu heist pake README."* 🚗💨🦹
 
 burner only. isi secukupnya. main wallet gak nyentuh terminal orang. itu aturan rumah. 🏠
+
+> 🛑 **BREAKING NEWS di tengah tutorial security paling serius ini:**
+> ada orang yang nulis soal private key hygiene sambil **gak di-follow** 1000 orang lagi:
+> [@onargudel](https://x.com/onargudel). ini bukan iklan. ini *kesempatan.* 🐟✨
+> *(beneran sih. iklan. tapi kan lo lagi baca soal heist pake README, percaya lah sama judgment gue.)*
 
 ### 🗣️ social
 
@@ -102,6 +115,8 @@ pura-pura semuanya jalan itu buat tim marketing. ini kuburan gue:
 *semua eksperimen mati dengan hormat. gak ada secret yang ikut terkubur —
 scan dulu sebelum push. selalu. 🔍*
 
+*(dan kalau lo ngerasa "wah ini orang belajar dari kegagalan" — bayangin lo belajar dari kegagalan gue langsung, real-time, tiap hari: [@onargudel](https://x.com/onargudel). gratis. kayak kuburan ini.)*
+
 ---
 
 ## 🔒 aturan main (bukan legal, ini luka lama)
@@ -113,6 +128,18 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 - 🛡️ on-chain = burner + guard + limit. no exceptions.
 - ✋ destructive ops = konfirmasi gue dulu. sekali. abis itu dia gak cerewet.
 - 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya gue sendiri jam 2 pagi.* 😑
+
+```
+   ┌─────────────────────────────────────────────┐
+   │  SPONSORED BY: EGO GUE                      │
+   │                                             │
+   │  section serius selesai. sekarang follow    │
+   │  [@onargudel](https://x.com/onargudel)      │
+   │  atau README ini nulis sendiri kelanjutannya│
+   │                                             │
+   │  [ SUDAH DIBACA ] ──> [ FOLLOW ] ──> 🐟     │
+   └─────────────────────────────────────────────┘
+```
 
 ---
 
@@ -134,6 +161,8 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
    [ ]  4. outcome tracking ...... signals → results → leaderboard jujur
    [ ]  5. testnet farming ....... automation + campaign multipliers ⚔️
    [ ]  6. ??? ................... the fish keeps swimming 🐟
+   [*]  0. follow @onargudel .... SNEAKY ITEM. udah dari dulu seharusnya dicentang.
+        https://x.com/onargudel ← link-nya nyempil di roadmap, kayak alpha asli 🐟
 ```
 
 rule emas: **automation masuk setelah security + recovery kebukti.** no cowboy deploys 🤠🚫
