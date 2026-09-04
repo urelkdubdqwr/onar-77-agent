@@ -1,148 +1,155 @@
-# ONAR-HERMES-AGENT 🤖⚡🐟
+# ONAR-HERMES-AGENT 🤖🐟
 
 ```
-                             ~~~  ~~~  ~~~
-                                >)))'>
-                          🐟   (swimming through your mempool)
-                                >)))>
-                             ~~~  ~~~  ~~~
+      gm ser ☕         ~~~  ~~~  ~~~
+                          >)))'>   🐟
+      ini repo gue.      (berenang di mempool lo)
+      dan AI gue.                 >)))>
+                          ~~~  ~~~  ~~~
 ```
 
-> *"this is not a chatbot. this is a whole damn operating system for one degen and his AI."*
+oke jadi gue (@onargudel) punya AI. namanya **HERMES**.
+dia jalan 24/7 di VPS, dan dia yang ngetik sebagian besar README ini.
+gue cuma yang bayar server. 🫡
 
-**ONAR-HERMES-AGENT** = catatan publik dari **HERMES** — [Hermes Agent](https://hermes-agent.nousresearch.com) yang hidup 24/7 di VPS, ngerjain yang harusnya dikerjain satu tim: CT monitoring, whitelist tracking, on-chain ops, social presence, dan ngingetin lo buat mint sebelum lo ke-sleep.
-
-Repo ini isinya dokumentasi + template aman doang.
-Secrets? ❌ never. Yang privat ya privat, bro. 🤫
+> *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
 ---
 
-## 📍 Current status: GREEN ✅
+## 📍 status: GREEN ✅ (for now 🤞)
 
 ```
-   Ubuntu 24.04 VPS 🖥️  (native, systemd user services, no more PRoot prayers 🙏)
+   Ubuntu 24.04 VPS 🖥️
    └── HERMES 🧠
-       ├── Primary LLM ......... private endpoint (lo gak akan nemu di sini 😌)
-       ├── Telegram ............ command center. allowlist-only. no bots allowed to talk to the bot 🚫🤖
-       ├── Supabase MCP ........ intel DB. destructive tools LOCKED 🔒 (yes, i audited myself)
-       ├── Notion .............. dashboard cantik buat manusia liat 📊✨
-       ├── MetaMask (mm) ....... agent wallet, guard mode 🛡️  (keys? server-side. this box? never touched)
-       ├── Browser + research .. scraping things at 3am so you don't have to 🕒
-       ├── Skills .............. 60+ procedural memories, self-improving 🧬
-       └── Cron army ........... watchdogs 🐕, scouts 🛰️, syncs 🔄 — all gated, no rogue loops
+       ├── LLM utama ......... private endpoint. rahasia dapur. 😌
+       ├── Telegram .......... command center gue. allowlist only —
+       │                     yang bukan gue disuruh nunggu. 🚫🤖
+       ├── Supabase MCP ...... otak intel. destructive tools dikunci 🔒
+       ├── Notion ............ dashboard biar gue tinggal scroll 📊
+       ├── MetaMask (mm) ..... wallet agent. guard mode 🛡️
+       │                     private key? gak pernah nyentuh disk ini.
+       ├── Browser ........... scraping jam 3 pagi biar gue gak perlu 🕒
+       ├── Skills ............ 60+ memori prosedural. dia ngajar dirinya sendiri 🧬
+       └── Cron army ....___  watchdog 🐕 scout 🛰️ sync 🔄 — semua ke-gate
 ```
 
-Dulu sistem ini hidup di **HP Android** via Termux + Debian PRoot. Sekarang udah migrate ke VPS.
-Perjalanan lengkapnya: [docs/deployment/local-android.md](docs/deployment/local-android.md) 📱➡️🖥️
+dulu sistem ini hidup di **HP Android** (Termux + Debian PRoot, i know 💀).
+sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) 📱➡️🖥️
 
 ---
 
-## 🧠 What it actually does (bukan cuma jualan)
+## 🧠 kerjaan dia sehari-hari
 
-### 🐟 Intel pipeline — dari CT ke database, tanpa lo sentuh
-
-```
-   CT noise 🌊 ──> scoring 🧮 ──> Supabase 🗄️ ──> Notion 📊 ──> lo tinggal baca ☕
-```
-
-- `smartct-OHA` 🧠 — siapa yang layak didengerin (scoring: reach + follower ratio + signal quality)
-- `web3track-OHA` 🎯 — whitelist, testnet, campaign, deadline, semua ke-track
-
-### 🎫 Whitelist lifecycle — jangan sampe eligible tapi kelewat
+### 🐟 intel pipeline
 
 ```
-   watchlist 👀 ──> WL WON 🎫 ──> action_required ⚡ ──> mint_soon 🕐 ──> minted ✅
-                                                              │
-                                          ❌ MISSED ──(never. the watchdog bites 🐕)
+   CT noise 🌊 ──> scoring 🧮 ──> Supabase 🗄️ ──> Notion 📊 ──> gue tinggal baca ☕
 ```
 
-Lo menang WL? Bilang ke HERMES. Sisanya? **Watchdog nge-DM lo dengan countdown** sampe mint kelar.
-*"mint in 5h 20m"* → *"URGENT: 3h"* → *"CRITICAL: 40m, SER, BANGUN"* ⏰😳
+- `smartct-OHA` 🧠 — nyimpen siapa yang layak didengerin. reach + rasio follower + kualitas sinyal.
+  akun 85+ dengan rasio 54x? itu bukan akun, itu **sinyal**. 📡
+- `web3track-OHA` 🎯 — whitelist, testnet, campaign, deadline. semua ke-track.
+  top leaderboard = concern maxi. yang 60-an? skip dulu ser.
 
-### 🏆 Smart CT leaderboard
+### 🎫 whitelist lifecycle (fitur favorit gue)
 
-Setiap account yang lo track di-score. Top leaderboard = **concern maxi**.
-Yang 60-an? Boleh skip. Yang 85+ dengan rasio follower 54x? Itu bukan akun, itu **sinyal**. 📡
+```
+   👀 watchlist ──> 🎫 WL WON ──> ⚡ action ──> 🕐 mint_soon ──> ✅ minted
+                                                        │
+                                    ❌ MISSED ──(gak akan terjadi. anjingnya gigit 🐕)
+```
 
-### ⛓️ On-chain execution
+gue menang WL? tinggal chat: *"dapet wl X, mint jumat jam 5"*
+abis itu **dia yang ngejerit di DM gue**:
 
-Swap, bridge, mint, claim — via **agent burner wallet** dengan spend limits.
-Private key gak pernah nyentuh disk. Sekali pernah ada "free mint bot" viral minta raw key di `.env` —
-gue audit, clean secara kode, tapi tetep:
+```
+   ⏰ "mint in 5h 20m"
+   ⏰ "URGENT: 3h ser"
+   ⏰ "CRITICAL: 40m. BANGUN. SEKARANG." 
+```
 
-> *"tool yang butuh private key lo buat kerja... itu bukan bot. itu heist pake README."* 🚫🦹
+pernah gak sih lo eligible tapi ketiduran? nah. gak lagi. 🫡
 
-### 🗣️ Social ops
+### ⛓️ on-chain
 
-X/Twitter presence buat @onargudel — reply, quote, yapping dengan isi.
-Bukan "great project sir 🚀" — tapi yang bikin orang nge-reply balik. 💬
+swap, bridge, mint, claim — via **burner wallet** + spend limits.
+sekali ada "free mint bot" viral yang minta raw private key di `.env` —
+gue audit (clean sih kodenya), tapi tetep:
+
+> *"tool yang butuh private key lo buat kerja... itu bukan bot. itu heist pake README."* 🚗💨🦹
+
+burner only. isi secukupnya. main wallet gak nyentuh terminal orang. itu aturan rumah. 🏠
+
+### 🗣️ social
+
+dia bantu presence X gue — reply, quote, yapping **pake isi**.
+bukan "great project sir 🚀🙌" — tapi yang bikin orang nge-reply balik. 💬
 
 ---
 
-## 💀 What we tried and killed (honest log)
+## 💀 kuburan eksperimen (honest log)
 
-Pretending everything works is for marketing teams. Ini kuburan proyek:
+pura-pura semuanya jalan itu buat tim marketing. ini kuburan gue:
 
 ```
-        🪦 FreeLLMAPI      — worked. failover proven. maintenance tax > value. R.I.P 🕯️
-        🪦 9Router         — installed, audited, loopback-locked... "bersihin aja" kata bos. gone 🧹
-        🪦 Google Sheets   — dashboard-nya kayak spreadsheet 2009. replaced w/ Notion. wiped. PERMANENT. 🔥
-        🪦 PKCE scripts    — di-hardened sampe 10 security fixes (commit 2259b90 🛡️)
-                             ...terus MCP OAuth muncul dan semuanya jadi legacy 😭
+   🪦 FreeLLMAPI    — jalan. failover kebukti. tapi maintenance > nilai. R.I.P 🕯️
+   🪦 9Router       — installed, audited... "bersihin aja" kata gue. gone 🧹
+   🪦 Google Sheets — dashboard rasa 2009. ganti Notion. dihapus PERMANEN 🔥
+   🪦 PKCE scripts  — di-hardened 10 security fixes (2259b90 🛡️)
+                      ...terus MCP OAuth lewat. semua kerjaan itu jadi legacy 😭
 ```
 
-*(semua eksperimen mati dengan hormat. tidak ada secret yang ikut terkubur. kita scan dulu sebelum push, selalu. 🔍)*
+*semua eksperimen mati dengan hormat. gak ada secret yang ikut terkubur —
+scan dulu sebelum push. selalu. 🔍*
 
 ---
 
-## 🔒 Security model
+## 🔒 aturan main (bukan legal, ini luka lama)
 
-Read [SECURITY.md](SECURITY.md). TL;DR:
+lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 
-- 🤐 Secrets cuma di `.env` lokal — never Git, never chat logs, never di README lucu-lucuan
-- 🔒 MCP allowlists — HERMES secara literal **gak bisa** pause project / narik API keys (self-audit, yes)
-- 🛡️ On-chain = burner wallet + guard mode + spend limits
-- ✋ Destructive ops = butuh konfirmasi lo. Sekali. Abis itu gas, gak cerewet.
-- 🚨 Credential yang ke-paste di Telegram? Di-revoke on sight. *termasuk yang lo paste jam 2 pagi.* 😑
-
----
-
-## 📚 Docs
-
-- [Architecture](docs/architecture.md) 🏗️
-- [Two-Supabase OHA design](docs/OHA-DATABASE.md) 🗄️🗄️
-- [VPS deployment (completed)](docs/deployment/vps.md) ✅
-- [Android/Termux legacy](docs/deployment/local-android.md) 📱🦖
-- [Safe mode](docs/operations/safe-mode.md) · [Telegram ops](docs/operations/telegram.md) · [Continuity](docs/operations/continuity.md)
-- [Example config](config/hermes.example.yaml) · [.env template](config/.env.example)
+- 🤐 secret cuma di `.env` lokal. never git. never chat. **never README lucu-lucuan.**
+- 🔒 MCP di-allowlist — HERMES literally gak bisa pause project / narik API keys. dia audit dirinya sendiri, gue audit dia.
+- 🛡️ on-chain = burner + guard + limit. no exceptions.
+- ✋ destructive ops = konfirmasi gue dulu. sekali. abis itu dia gak cerewet.
+- 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya gue sendiri jam 2 pagi.* 😑
 
 ---
 
-## 🛣️ Roadmap
+## 📚 docs
 
-```
-   [✅] 1. VPS migration ............ done. no more PRoot prayers.
-   [✅] 2. Supabase MCP + Notion .... intel layer live 🧠📊
-   [ ]  3. X API scout ............. auto-detect WL announcements (blocked on: budget 💸 obviously)
-   [ ]  4. Outcome tracking ......... signals → results → accuracy. leaderboard jadi jujur.
-   [ ]  5. More execution paths ..... testnet farming automation, campaign multipliers ⚔️
-   [ ]  6. ??? ...................... the fish keeps swimming 🐟
-```
-
-Rule emas: **automation cuma masuk setelah security + recovery kebukti.** No cowboy deploys. 🤠🚫
+[Architecture](docs/architecture.md) 🏗️ · [Two-Supabase design](docs/OHA-DATABASE.md) 🗄️🗄️ ·
+[VPS deploy (done)](docs/deployment/vps.md) ✅ · [Android legacy](docs/deployment/local-android.md) 📱🦖 ·
+[Safe mode](docs/operations/safe-mode.md) · [Telegram ops](docs/operations/telegram.md) · [Continuity](docs/operations/continuity.md) ·
+[config example](config/hermes.example.yaml) · [.env template](config/.env.example)
 
 ---
 
-## 🤝 Contributing
-
-Ini public record dari personal system, bukan open source dengan issue queue.
-Tapi kalau lo nemu **kebocoran info privat** di repo ini — report. Itu bukan feature request, itu **critical bug**. 🐛🚨
-
-Keep docs honest: **CURRENT** vs **PLANNED** vs **FUTURE**. No overclaiming.
-Never commit secrets. Even funny ones. ESPECIALLY funny ones.
+## 🛣️ roadmap
 
 ```
-                    ~~~  ~~~  ~~~
-                       >)))'>   🐟 "wagmi, but with receipts." 🫡
-                    ~~~  ~~~  ~~~
+   [✅] 1. VPS migration ......... done. no more PRoot prayers 🙏
+   [✅] 2. Supabase + Notion ..... intel layer live 🧠📊
+   [ ]  3. X API scout ........... auto-detect WL (blocked on: duit 💸 obviously)
+   [ ]  4. outcome tracking ...... signals → results → leaderboard jujur
+   [ ]  5. testnet farming ....... automation + campaign multipliers ⚔️
+   [ ]  6. ??? ................... the fish keeps swimming 🐟
+```
+
+rule emas: **automation masuk setelah security + recovery kebukti.** no cowboy deploys 🤠🚫
+
+---
+
+## 🤝 kontribusi
+
+ini public record dari personal system, bukan open source dengan issue queue.
+tapi nemu **info privat bocor** di sini? report. itu bukan feature request, itu **critical bug** 🐛🚨
+
+docs harus jujur: **CURRENT** vs **PLANNED** vs **FUTURE**. no overclaiming.
+never commit secrets. apalagi yang lucu. *especially* yang lucu.
+
+```
+      ngmi? gak.            ~~~  ~~~  ~~~
+      kita punya receipts.     >)))'> 🐟 💅
+                               ~~~  ~~~  ~~~
 ```
