@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Press+Start+2P&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  /* FLEXIBLE: Pipkits voxel-farm palette — sand, gold, sky blue, brown ink */
+  .slide {
+    width:1080px; height:1920px; position:relative; overflow:hidden;
+    font-family:'Space Mono',monospace;
+    background:linear-gradient(180deg,#a8d8ea 0%,#cfe8f0 22%,#e8d5a8 45%,#d9b878 100%);
+    color:#3a2a18;
+  }
+  .slide::after {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:5;
+    background-image:radial-gradient(#3a2a1812 2.5px, transparent 2.5px);
+    background-size:22px 22px;
+  }
+  .grain { position:absolute; inset:0; z-index:6; pointer-events:none; opacity:.12; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  }
+  .ab { font-family:'Archivo Black',sans-serif; }
+  .px { font-family:'Press Start 2P',monospace; }
+  .duo { position:relative; overflow:hidden; }
+  .duo img { width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.6); display:block; }
+  .duo::after { content:''; position:absolute; inset:0; background:#b8860b; mix-blend-mode:multiply; }
+  .duo::before { content:''; position:absolute; inset:0; z-index:2; background-image:radial-gradient(#3a2a18 1.6px, transparent 1.6px); background-size:7px 7px; opacity:.5; mix-blend-mode:multiply; }
+  .torn { clip-path:polygon(0% 4%, 3% 0%, 9% 3%, 16% 1%, 24% 4%, 33% 0%, 42% 3%, 52% 1%, 61% 4%, 70% 0%, 79% 3%, 88% 1%, 95% 4%, 100% 0%, 100% 96%, 96% 100%, 88% 97%, 79% 100%, 70% 96%, 60% 100%, 50% 97%, 40% 100%, 30% 96%, 21% 100%, 12% 97%, 5% 100%, 0% 96%); }
+  .sticker { display:inline-block; background:#3a2a18; color:#f5e6c4; padding:16px 30px; font-weight:900; border:5px solid #3a2a18; box-shadow:12px 12px 0 #b8860b; }
+  .tape { position:absolute; z-index:40; background:#b8860b; color:#fff; font-weight:900; padding:16px 34px; font-size:34px; box-shadow:9px 9px 0 #3a2a18; }
+  .speech { position:relative; background:#fff8e8; color:#3a2a18; padding:26px 36px; font-weight:900; border:5px solid #3a2a18; box-shadow:10px 10px 0 #3a2a18; }
+  .speech::after { content:''; position:absolute; bottom:-34px; left:60px; border:20px solid transparent; border-top:34px solid #3a2a18; }
+  .marq { position:absolute; left:-30px; right:-30px; white-space:nowrap; overflow:hidden; font-family:'Archivo Black',sans-serif; padding:14px 0; z-index:20; }
+  .marq span { display:inline-block; font-size:44px; letter-spacing:4px; }
+  .hashtag { display:inline-block; background:#fff8e8; color:#3a2a18; border:3px solid #3a2a18; padding:10px 24px; font-weight:bold; font-size:30px; }
+  /* voxel blocks motif */
+  .vox { position:absolute; z-index:2; }
+  .vox i { position:absolute; display:block; width:56px; height:56px; background:#c9a86a; border:3px solid #3a2a1855; box-shadow:inset -8px -8px 0 #3a2a1822, inset 8px 8px 0 #ffffff33; }
+  .vox i.g { background:#b8860b; }
+  .vox i.s { background:#8fbc8f; }
+</style></head><body>
+
+<div class="slide">
+  <div class="grain"></div>
+
+  <!-- voxel hills bottom -->
+  <div class="vox" style="bottom:0;left:0;right:0;height:280px;" id="hills"></div>
+  <!-- floating pixel clouds -->
+  <div class="vox" style="top:200px;left:60px;"><i style="left:0;top:0;"></i><i style="left:56px;top:0;background:#fff8e8;"></i><i style="left:112px;top:0;background:#fff8e8;"></i><i style="left:56px;top:-56px;background:#fff8e8;"></i></div>
+  <div class="vox" style="top:320px;right:120px;"><i style="left:0;top:0;background:#fff8e8;"></i><i style="left:56px;top:0;background:#fff8e8;"></i><i style="left:112px;top:0;"></i><i style="left:56px;top:56px;background:#fff8e8;"></i></div>
+
+  <div class="marq" style="top:0;background:#3a2a18;color:#f5e6c4;transform:rotate(-1.2deg);"><span>🎃 15 MORE GTD&nbsp; 🎃 15 MORE GTD&nbsp; 🎃 15 MORE GTD&nbsp; 🎃 15 MORE GTD&nbsp;</span></div>
+  <div style="position:absolute;top:92px;left:0;right:0;background:#b8860b;color:#fff;transform:rotate(.8deg);z-index:20;text-align:center;font-family:'Archivo Black',sans-serif;font-size:36px;letter-spacing:3px;padding:14px 0;">LIKE + RT + DROP WALLET · 222 KOMEN PERTAMA</div>
+
+  <!-- headline: pixel font, their style -->
+  <div class="px" style="position:absolute;top:280px;left:55px;font-size:72px;line-height:1.3;color:#3a2a18;text-shadow:8px 8px 0 #b8860b;z-index:10;">THE<br>FARM<br>IS<br><span style="color:#fff;text-shadow:8px 8px 0 #3a2a18;">OPEN.</span> 🐐</div>
+
+  <!-- pfp polaroid -->
+  <div class="duo" style="position:absolute;top:200px;right:55px;width:240px;height:240px;border:9px solid #fff8e8;box-shadow:-12px -12px 0 #3a2a18;transform:rotate(6deg);z-index:12;"><img src="assets/pfp.jpg"></div>
+
+  <!-- funnel stats -->
+  <div style="position:absolute;top:1000px;left:55px;display:flex;flex-direction:column;gap:26px;z-index:11;">
+    <div class="sticker px" style="font-size:30px;transform:rotate(-1.5deg);">36,414 IN → 2,121 W</div>
+    <div class="sticker px" style="font-size:26px;transform:rotate(1deg);background:#fff8e8;color:#3a2a18;box-shadow:12px 12px 0 #3a2a18;">1,208 SYBILS CUT 🔪</div>
+  </div>
+  <div class="tape torn" style="top:980px;right:50px;transform:rotate(-3deg);font-size:32px;z-index:13;">WL FORM: CLOSED</div>
+
+  <!-- bullish hook bubble -->
+  <div class="speech" style="position:absolute;top:1330px;left:55px;max-width:560px;font-size:31px;transform:rotate(-1.5deg);z-index:14;line-height:1.5;">form mereka yang bikin sybil mati.<br>yang lolos? <span style="color:#b8860b;">real wallets. real mint.</span><br>dan sekarang 15 GTD lagi<br>buat 222 komentar pertama. 🌾</div>
+
+  <!-- gtd sticker -->
+  <div class="sticker ab" style="position:absolute;top:1560px;right:55px;max-width:420px;font-size:36px;transform:rotate(2deg);z-index:15;background:#b8860b;border-color:#3a2a18;color:#fff;text-align:center;">15 SLOT GTD<br><span style="font-size:24px;">= GUARANTEED MINT 🎃</span></div>
+
+  <div class="hashtag px" style="position:absolute;bottom:330px;left:55px;z-index:12;transform:rotate(-2deg);font-size:22px;">#PIPKITS</div>
+  <div class="hashtag" style="position:absolute;bottom:270px;left:250px;z-index:12;transform:rotate(1.5deg);background:#3a2a18;color:#f5e6c4;border-color:#3a2a18;">RT + LIKE + WALLET →</div>
+
+  <div style="position:absolute;bottom:150px;right:55px;font-size:44px;font-weight:bold;color:#3a2a18;z-index:12;">&gt;)))'&gt; 🐟 &lt;('(((&lt;</div>
+
+  <div style="position:absolute;bottom:42px;left:55px;font-size:42px;font-weight:bold;color:#fff;background:#3a2a18;padding:8px 24px;z-index:50;letter-spacing:2px;">@<span style="color:#f5c542;">onargudel</span> <span style="font-size:26px;color:#c9b890;">· x.com/pipkits_rh</span></div>
+</div>
+
+<script>
+  // voxel terraced hills
+  const hills = document.getElementById('hills');
+  const cols = 20;
+  for (let x = 0; x < cols; x++) {
+    const h = 1 + Math.round(3 * Math.abs(Math.sin(x / 3.2)));
+    for (let y = 0; y < h; y++) {
+      const i = document.createElement('i');
+      i.style.left = (x * 56) + 'px';
+      i.style.bottom = (y * 56) + 'px';
+      if (y === h - 1 && x % 5 === 2) i.className = 's';
+      if (y === 0 && x % 7 === 3) i.className = 'g';
+      hills.appendChild(i);
+    }
+  }
+</script>
+
+</body></html>

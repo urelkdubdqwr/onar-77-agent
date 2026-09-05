@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Baloo+2:wght@800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  .slide {
+    width:1080px; height:1920px; position:relative; overflow:hidden;
+    font-family:'Space Mono',monospace; background:#0d0d0d; color:#fff;
+  }
+  .slide::after {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:5;
+    background-image:radial-gradient(#ed008922 2.5px, transparent 2.5px);
+    background-size:22px 22px; mix-blend-mode:screen;
+  }
+  .grain { position:absolute; inset:0; z-index:6; pointer-events:none; opacity:.18; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  }
+  .ab { font-family:'Archivo Black',sans-serif; }
+  .bubble { font-family:'Baloo 2',cursive; }
+  .duo { position:relative; overflow:hidden; }
+  .duo img { width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.6) brightness(1.1); display:block; }
+  .duo::after { content:''; position:absolute; inset:0; background:#ed0089; mix-blend-mode:multiply; }
+  .duo::before { content:''; position:absolute; inset:0; z-index:2; background-image:radial-gradient(#000 1.8px, transparent 1.8px); background-size:7px 7px; opacity:.5; mix-blend-mode:multiply; }
+  .handle { position:absolute; bottom:40px; left:0; right:0; text-align:center; font-size:42px; font-weight:bold; color:#fff; z-index:50; letter-spacing:2px; }
+  .handle b { color:#ed0089; }
+  .torn { clip-path:polygon(0% 4%, 3% 0%, 9% 3%, 16% 1%, 24% 4%, 33% 0%, 42% 3%, 52% 1%, 61% 4%, 70% 0%, 79% 3%, 88% 1%, 95% 4%, 100% 0%, 100% 96%, 96% 100%, 88% 97%, 79% 100%, 70% 96%, 60% 100%, 50% 97%, 40% 100%, 30% 96%, 21% 100%, 12% 97%, 5% 100%, 0% 96%); }
+  .sticker { display:inline-block; background:#fff; color:#000; padding:16px 30px; font-weight:900; border:5px solid #000; box-shadow:12px 12px 0 #ed0089; }
+  .tape { position:absolute; z-index:40; background:#ed0089; color:#fff; font-weight:900; padding:16px 34px; font-size:34px; box-shadow:9px 9px 0 #000; }
+  .speech { position:relative; background:#fff; color:#000; padding:26px 36px; font-weight:900; border:5px solid #000; }
+  .speech::after { content:''; position:absolute; bottom:-34px; left:60px; border:20px solid transparent; border-top:34px solid #000; }
+  .marq { position:absolute; left:-30px; right:-30px; white-space:nowrap; overflow:hidden; font-family:'Archivo Black',sans-serif; padding:14px 0; z-index:20; }
+  .marq span { display:inline-block; font-size:46px; letter-spacing:4px; }
+  .hashtag { display:inline-block; background:#000; color:#ed0089; border:3px solid #ed0089; padding:10px 24px; font-weight:bold; font-size:32px; }
+</style></head><body>
+
+<div class="slide">
+  <div class="grain"></div>
+  <!-- full-bleed duotone wedding banner -->
+  <div class="duo" style="position:absolute;inset:0;"><img src="assets/banner.jpg"></div>
+  <!-- darkening for text zones -->
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,#000000b0 0%,#00000030 30%,#00000020 55%,#000000c0 85%);z-index:7;"></div>
+
+  <div class="marq" style="top:0;background:#ed0089;color:#000;transform:rotate(-1.5deg);"><span>GM SER ☕&nbsp; GM SER ☕&nbsp; GM SER ☕&nbsp; GM SER ☕&nbsp; GM SER ☕&nbsp;</span></div>
+  <div class="marq" style="top:96px;background:#000;color:#ed0089;transform:rotate(1deg);"><span>INI REPO GUE&nbsp; INI REPO GUE&nbsp; INI REPO GUE&nbsp; INI REPO GUE&nbsp;</span></div>
+
+  <!-- hero -->
+  <div class="ab" style="position:absolute;top:330px;left:60px;font-size:225px;line-height:.86;color:#fff;text-shadow:14px 14px 0 #000, 28px 28px 0 #ed0089;z-index:10;">INI<br>REPO<br>GUE.</div>
+
+  <!-- pfp polaroid -->
+  <div class="duo" style="position:absolute;top:380px;right:50px;width:330px;height:330px;border:10px solid #fff;box-shadow:-16px -16px 0 #ed0089;transform:rotate(6deg);z-index:12;"><img src="assets/pfp.jpg"></div>
+
+  <div class="tape torn" style="top:1060px;right:60px;transform:rotate(4deg);font-size:40px;z-index:12;">dan AI gue.</div>
+  <div class="bubble" style="position:absolute;top:1150px;left:50px;font-size:150px;color:#ed0089;-webkit-text-stroke:7px #fff;text-shadow:16px 16px 0 #000;z-index:10;">ONAR 🤖</div>
+
+  <div class="speech" style="position:absolute;top:1330px;right:60px;max-width:560px;font-size:32px;transform:rotate(2deg);z-index:16;">dia jalan 24/7 di VPS. ngurusin whitelist, deadline, MOOD gue. tanpa gaji. 🕯️</div>
+
+  <div class="sticker ab" style="position:absolute;top:1620px;left:50px;right:50px;font-size:38px;background:#000;color:#fff;border-color:#ed0089;box-shadow:12px 12px 0 #fff;transform:rotate(-1.5deg);z-index:14;text-align:center;">"itu bukan bot. itu HEIST pake README." 🦹</div>
+
+  <div class="hashtag" style="position:absolute;bottom:420px;left:60px;z-index:12;transform:rotate(-2deg);">#ONARMERCH</div>
+  <div class="hashtag" style="position:absolute;bottom:350px;left:250px;transform:rotate(2deg);z-index:12;background:#ed0089;color:#000;border-color:#000;">#BERENANGDIMEMPOOL</div>
+  <div class="hashtag" style="position:absolute;bottom:390px;right:60px;transform:rotate(-1deg);z-index:12;background:#fff;color:#000;border-color:#000;">follow @onargudel 📡</div>
+
+  <div style="position:absolute;bottom:130px;left:0;right:0;text-align:center;font-size:52px;font-weight:bold;color:#fff;text-shadow:4px 4px 0 #000;z-index:12;">&gt;)))'&gt; 🐟 &lt;('(((&lt;</div>
+  <div style="position:absolute;bottom:40px;left:50px;font-size:42px;font-weight:bold;color:#fff;z-index:50;letter-spacing:2px;">@<span style="color:#ed0089;">onargudel</span> <span style="color:#888;font-size:32px;">· github.com/urelkdubdqwr</span></div>
+</div>
+
+</body></html>

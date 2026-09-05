@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Baloo+2:wght@800&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  /* FLEXIBLE layer: STANDARD palette = paper cream + ink black + crimson */
+  .slide {
+    width:1080px; height:1920px; position:relative; overflow:hidden;
+    font-family:'Space Mono',monospace; background:#f3f1ec; color:#111;
+  }
+  /* halftone in crimson ink */
+  .slide::after {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:5;
+    background-image:radial-gradient(#1a1a1815 2.5px, transparent 2.5px);
+    background-size:22px 22px;
+  }
+  .grain { position:absolute; inset:0; z-index:6; pointer-events:none; opacity:.14; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");
+  }
+  .ab { font-family:'Archivo Black',sans-serif; }
+  .duo { position:relative; overflow:hidden; }
+  .duo img { width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.7) brightness(1.05); display:block; }
+  .duo::after { content:''; position:absolute; inset:0; background:#1a1a18; mix-blend-mode:multiply; }
+  .duo::before { content:''; position:absolute; inset:0; z-index:2; background-image:radial-gradient(#be123c 1.6px, transparent 1.6px); background-size:7px 7px; opacity:.55; mix-blend-mode:screen; }
+  .torn { clip-path:polygon(0% 4%, 3% 0%, 9% 3%, 16% 1%, 24% 4%, 33% 0%, 42% 3%, 52% 1%, 61% 4%, 70% 0%, 79% 3%, 88% 1%, 95% 4%, 100% 0%, 100% 96%, 96% 100%, 88% 97%, 79% 100%, 70% 96%, 60% 100%, 50% 97%, 40% 100%, 30% 96%, 21% 100%, 12% 97%, 5% 100%, 0% 96%); }
+  .sticker { display:inline-block; background:#111; color:#f3f1ec; padding:16px 30px; font-weight:900; border:5px solid #111; box-shadow:12px 12px 0 #be123c; }
+  .tape { position:absolute; z-index:40; background:#be123c; color:#fff; font-weight:900; padding:16px 34px; font-size:34px; box-shadow:9px 9px 0 #111; }
+  .speech { position:relative; background:#fff; color:#111; padding:26px 36px; font-weight:900; border:5px solid #111; box-shadow:10px 10px 0 #111; }
+  .speech::after { content:''; position:absolute; bottom:-34px; left:60px; border:20px solid transparent; border-top:34px solid #111; }
+  .marq { position:absolute; left:-30px; right:-30px; white-space:nowrap; overflow:hidden; font-family:'Archivo Black',sans-serif; padding:14px 0; z-index:20; }
+  .marq span { display:inline-block; font-size:44px; letter-spacing:4px; }
+  .hashtag { display:inline-block; background:#fff; color:#111; border:3px solid #111; padding:10px 24px; font-weight:bold; font-size:30px; }
+  /* dot-matrix LED motif from the subject */
+  .led { display:grid; grid-template-columns:repeat(24,1fr); gap:9px; }
+  .led i { width:11px; height:11px; background:#111; border-radius:50%; opacity:.18; }
+  .led i.on { background:#be123c; opacity:1; }
+  .col { position:absolute; font-size:120px; z-index:2; opacity:.12; }
+</style></head><body>
+
+<div class="slide">
+  <div class="grain"></div>
+
+  <!-- classical columns watermark motif (bank) -->
+  <div class="col" style="top:300px;left:40px;">🏛</div>
+  <div class="col" style="top:300px;left:220px;">🏛</div>
+  <div class="col" style="top:300px;left:400px;">🏛</div>
+
+  <!-- marquee: their teaser line -->
+  <div class="marq" style="top:0;background:#111;color:#f3f1ec;transform:rotate(-1.2deg);"><span>SOMETHING NEW IS COMING. SOMETHING NEW IS COMING. SOMETHING NEW IS COMING.</span></div>
+  <div class="marq" style="top:92px;background:#be123c;color:#fff;transform:rotate(.8deg);"><span>✦ SOVEREIGN ONCHAIN CENTRAL BANK ✦ SOVEREIGN ONCHAIN CENTRAL BANK ✦</span></div>
+
+  <!-- headline -->
+  <div class="ab" style="position:absolute;top:270px;left:55px;font-size:120px;line-height:.95;color:#111;text-shadow:12px 12px 0 #be123c;z-index:10;">THE<br>SOVEREIGN<br><span style="color:#fff;-webkit-text-stroke:5px #111;">ONCHAIN</span><br>CENTRAL<br>BANK. 🏦</div>
+
+  <!-- pfp polaroid -->
+  <div class="duo" style="position:absolute;top:170px;right:55px;width:230px;height:230px;border:9px solid #fff;box-shadow:-12px -12px 0 #111;transform:rotate(5deg);z-index:12;"><img src="assets/pfp.jpg"></div>
+
+  <!-- stats stickers (their numbers) -->
+  <div style="position:absolute;top:1130px;left:55px;display:flex;flex-direction:column;gap:26px;z-index:11;">
+    <div class="sticker ab" style="font-size:44px;transform:rotate(-1.5deg);">1B <span style="font-size:30px;">$STANDARD hard cap</span></div>
+    <div class="sticker ab" style="font-size:44px;transform:rotate(1deg);background:#fff;color:#111;box-shadow:12px 12px 0 #111;">1,000 <span style="font-size:30px;">Founding Charters</span></div>
+  </div>
+
+  <!-- tape: genesis mint -->
+  <div class="tape torn" style="top:1120px;right:50px;transform:rotate(-3deg);font-size:38px;z-index:13;">GENESIS MINT: COMING SOON</div>
+
+  <!-- speech bubble: bullish hook -->
+  <div class="speech" style="position:absolute;top:1400px;left:55px;max-width:560px;font-size:31px;transform:rotate(-1.5deg);z-index:14;line-height:1.45;">capital flow jadi monetary policy.<br>bank-nya gak bisa dibekuin.<br><span style="color:#be123c;">dan lo masih bisa dapet charter.</span> 📜</div>
+
+  <!-- LED dot matrix fish -->
+  <div class="led" style="position:absolute;top:1330px;right:55px;width:340px;z-index:11;" id="led"></div>
+
+  <!-- policy rate sticker -->
+  <div class="sticker ab" style="position:absolute;top:1620px;right:55px;max-width:480px;font-size:32px;transform:rotate(1.5deg);z-index:15;background:#111;border-color:#be123c;">POLICY RATE 0.2×—1.25×<br><span style="font-size:22px;font-family:'Space Mono';">cuts immediately. raises must be earned.</span></div>
+
+  <!-- hashtags -->
+  <div class="hashtag" style="position:absolute;bottom:250px;left:55px;z-index:12;transform:rotate(-2deg);">#STANDARD</div>
+  <div class="hashtag" style="position:absolute;bottom:190px;left:280px;z-index:12;transform:rotate(1.5deg);background:#be123c;color:#fff;border-color:#111;">WHITELIST CHECKER IS LIVE →</div>
+
+  <!-- fish -->
+  <div style="position:absolute;bottom:110px;right:55px;font-size:44px;font-weight:bold;color:#111;z-index:12;">&gt;)))'&gt; 🐟 &lt;('(((&lt;</div>
+
+  <!-- WAJIB watermark bottom-left + handle -->
+  <div style="position:absolute;bottom:42px;left:55px;font-size:42px;font-weight:bold;color:#111;z-index:50;letter-spacing:2px;">@<span style="color:#be123c;">onargudel</span> <span style="font-size:28px;color:#6e6e6e;">· standardreserve.xyz</span></div>
+</div>
+
+<script>
+  // build LED matrix: recognizable fish (tail left, head right, eye gap) — 24 cols
+  const rows = [
+    "..................##....",
+    "..................###...",
+    "..#..............#####..",
+    "...#............######..",
+    "....###########.######..",
+    ".....#########..##.###..",
+    "....###########.######..",
+    "...#............######..",
+    "..#..............#####..",
+    "..................###...",
+    "..................##....",
+  ];
+  const led = document.getElementById('led');
+  rows.forEach(r => { for (const c of r) { const i = document.createElement('i'); if (c === '#') i.className = 'on'; led.appendChild(i); } });
+</script>
+
+</body></html>

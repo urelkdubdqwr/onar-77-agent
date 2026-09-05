@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#111; }
+  .slide {
+    width:1080px; height:1920px; position:relative; overflow:hidden;
+    font-family:'Space Mono',monospace; padding:80px;
+  }
+  .archivo { font-family:'Archivo Black',sans-serif; }
+  .num { position:absolute; top:40px; right:50px; font-size:40px; font-weight:bold; z-index:50; }
+  .handle { position:absolute; bottom:40px; left:0; right:0; text-align:center; font-size:44px; font-weight:bold; z-index:50; }
+  .sticker {
+    display:inline-block; padding:18px 34px; font-weight:900;
+    border:6px solid #000; box-shadow:14px 14px 0 #000;
+  }
+  .tape {
+    position:absolute; padding:14px 40px; font-weight:900; font-size:36px;
+    background:#ffea00; border:4px solid #000; transform:rotate(-6deg);
+    box-shadow:8px 8px 0 rgba(0,0,0,.9); z-index:40;
+  }
+  .marquee {
+    white-space:nowrap; overflow:hidden; font-family:'Archivo Black',sans-serif;
+    font-size:52px; padding:18px 0; border-top:8px solid #000; border-bottom:8px solid #000;
+  }
+  .halftone { background-image:radial-gradient(#00000033 3px, transparent 3px); background-size:26px 26px; }
+  .fish { font-size:56px; font-weight:bold; white-space:pre; line-height:1.3; }
+  .shadow-text { text-shadow:10px 10px 0 #000; }
+  .outline-text { -webkit-text-stroke:4px #000; color:transparent; }
+</style></head><body>
+
+<!-- ═══ SLIDE 1 — COVER ═══ -->
+<div class="slide" style="background:#ff2a6d;">
+  <div style="position:absolute;inset:0;" class="halftone"></div>
+  <div class="num" style="color:#00f0ff;">01/08</div>
+  <div class="marquee" style="background:#000;color:#ffea00;position:absolute;top:0;left:-20px;right:-20px;transform:rotate(-2deg);">GM SER ☕ GM SER ☕ GM SER ☕ GM SER ☕</div>
+  <img src="assets/banner.jpg" style="width:880px;height:500px;object-fit:cover;border:10px solid #000;box-shadow:24px 24px 0 #00f0ff, 48px 48px 0 #ffea00;margin-top:140px;transform:rotate(2deg);position:relative;z-index:10;">
+  <div class="tape" style="top:520px;right:40px;z-index:20;">100% ORGANIK*</div>
+  <div class="archivo shadow-text" style="font-size:150px;line-height:.95;color:#fff;margin-top:90px;position:relative;z-index:10;">INI<br>REPO<br><span style="color:#ffea00;">GUE.</span></div>
+  <div class="archivo" style="font-size:64px;color:#000;margin-top:36px;transform:rotate(-1deg);position:relative;z-index:10;">dan AI gue. namanya <span style="background:#000;color:#00f0ff;padding:4px 18px;">ONAR</span> 🤖</div>
+  <div class="fish" style="color:#000;margin-top:50px;position:relative;z-index:10;">&gt;)))'&gt; 🐟 &lt;('(((&lt;
+   berenang di mempool LO</div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 2 — PITCH ═══ -->
+<div class="slide" style="background:#00f0ff;">
+  <div class="num" style="color:#ff2a6d;">02/08</div>
+  <div class="marquee" style="background:#ffea00;color:#000;position:absolute;top:0;left:-20px;right:-20px;transform:rotate(1.5deg);">BREAKING: MANUSIA BIKIN AI-NYA KERJA 24/7 — SANG AI DIAM SAJA</div>
+  <div class="archivo" style="font-size:88px;line-height:1.05;color:#000;margin-top:180px;">gue punya<br>AI.<br><span style="background:#ff2a6d;color:#fff;padding:0 24px;display:inline-block;transform:rotate(-2deg);box-shadow:12px 12px 0 #000;">dia punya</span><br><span style="font-size:130px;color:#ff2a6d;text-shadow:8px 8px 0 #000;">gue.</span></div>
+  <div style="margin-top:70px;font-size:46px;line-height:1.6;color:#000;font-weight:bold;">
+    <div class="sticker" style="background:#fff;margin-bottom:26px;">ngurusin whitelist ✅</div><br>
+    <div class="sticker" style="background:#ffea00;margin-bottom:26px;">ngurusin deadline ✅</div><br>
+    <div class="sticker" style="background:#ff2a6d;color:#fff;">ngurusin MOOD gue ✅</div>
+  </div>
+  <div class="archivo" style="margin-top:70px;font-size:56px;color:#000;transform:rotate(-1deg);">tanpa gaji. tanpa libur.<br><span style="background:#000;color:#00f0ff;padding:2px 16px;">tanpa ngeluh. (sejauh ini.)</span></div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 3 — STACK ═══ -->
+<div class="slide" style="background:#ffea00;">
+  <div class="num" style="color:#ff2a6d;">03/08</div>
+  <div class="marquee" style="background:#000;color:#ff2a6d;position:absolute;top:0;left:-20px;right:-20px;">STATUS: GREEN ✅ (for now 🤞) STATUS: GREEN ✅ (for now 🤞)</div>
+  <div class="archivo" style="font-size:96px;color:#000;margin-top:170px;text-shadow:8px 8px 0 #ff2a6d;">THE STACK 🥞</div>
+  <div style="margin-top:50px;display:flex;flex-direction:column;gap:22px;">
+    <div class="sticker" style="background:#fff;font-size:40px;transform:rotate(-1deg);">🧠 LLM — <span style="background:#000;color:#ffea00;">rahasia dapur 😌</span></div>
+    <div class="sticker" style="background:#ff2a6d;color:#fff;font-size:40px;transform:rotate(0.8deg);">📲 Telegram — COMMAND CENTER. allowlist only 🚫</div>
+    <div class="sticker" style="background:#00f0ff;font-size:40px;transform:rotate(-0.6deg);">🗄️ Supabase — otak intel 🔒</div>
+    <div class="sticker" style="background:#fff;font-size:40px;transform:rotate(1deg);">📊 Notion — dashboard tinggal scroll</div>
+    <div class="sticker" style="background:#4ade80;font-size:40px;transform:rotate(-1.2deg);">🛡️ MetaMask — wallet agent. <b>private key? gak pernah nyentuh disk ini.</b></div>
+    <div class="sticker" style="background:#000;color:#00f0ff;font-size:40px;transform:rotate(0.6deg);">🕒 Browser — scraping jam 3 pagi biar gue gak perlu</div>
+    <div class="sticker" style="background:#fff;font-size:40px;transform:rotate(-0.8deg);">🧬 60+ Skills — dia ngajar dirinya sendiri</div>
+    <div class="sticker" style="background:#ff2a6d;color:#fff;font-size:40px;transform:rotate(1.4deg);">🐕 Cron army — watchdog. scout. sync. SEMUA KE-GATE</div>
+  </div>
+  <div class="tape" style="bottom:180px;right:60px;transform:rotate(5deg);">dulu di HP. sekarang VPS. 📱➡️🖥️</div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 4 — WATCHDOG ═══ -->
+<div class="slide" style="background:#000;">
+  <div class="num" style="color:#ffea00;">04/08</div>
+  <div class="marquee" style="background:#ff2a6d;color:#fff;position:absolute;top:0;left:-20px;right:-20px;transform:rotate(-1.5deg);">🐕 WATCHDOG MODE 🐕 WATCHDOG MODE 🐕 WATCHDOG MODE 🐕</div>
+  <div class="archivo" style="font-size:80px;color:#fff;margin-top:180px;line-height:1.1;">gue menang WL?<br><span style="color:#ffea00;">tinggal chat.</span></div>
+  <div style="margin-top:40px;background:#1a1a2e;border:4px solid #4ade80;padding:30px;font-size:40px;color:#4ade80;transform:rotate(-1deg);">&gt; "dapet wl X, mint jumat jam 5"<br><span style="color:#666;">_</span></div>
+  <div class="archivo" style="margin-top:60px;font-size:56px;color:#fff;">abis itu <span style="color:#ff2a6d;">DIA</span> yang ngejerit di DM gue:</div>
+  <div style="margin-top:40px;display:flex;flex-direction:column;gap:24px;">
+    <div class="sticker" style="background:#ffea00;color:#000;font-size:42px;">⏰ "mint in 5h 20m"</div>
+    <div class="sticker" style="background:#ff8c00;color:#000;font-size:46px;transform:rotate(1deg);">⏰ "URGENT: 3h ser"</div>
+    <div class="sticker" style="background:#ff2a6d;color:#fff;font-size:52px;transform:rotate(-2deg);box-shadow:18px 18px 0 #fff;">⏰ "CRITICAL: 40m.<br>BANGUN. <span style="text-decoration:underline;">SEKARANG.</span>"</div>
+  </div>
+  <div class="archivo" style="margin-top:70px;font-size:54px;color:#4ade80;">pernah eligible<br>tapi ketiduran?<br><span style="background:#4ade80;color:#000;padding:0 16px;">nah. gak lagi. 🫡</span></div>
+  <div class="handle" style="color:#ffea00;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 5 — AD (BRUTAL) ═══ -->
+<div class="slide" style="background:#4ade80;">
+  <div class="num" style="color:#000;">05/08</div>
+  <div class="marquee" style="background:#000;color:#4ade80;position:absolute;top:0;left:-20px;right:-20px;">Iklan Iklan Iklan Iklan Iklan Iklan Iklan Iklan</div>
+  <div class="marquee" style="background:#ffea00;color:#000;position:absolute;top:110px;left:-20px;right:-20px;transform:rotate(-1deg);">iklan iklan iklan iklan iklan iklan iklan iklan iklan</div>
+  <div class="archivo outline-text" style="font-size:180px;line-height:.9;color:#fff;margin-top:320px;">SISIPAN.</div>
+  <div class="sticker" style="background:#fff;font-size:48px;margin-top:60px;transform:rotate(-2deg);box-shadow:20px 20px 0 #000;">lo udah baca sampe<br>slide 5.</div>
+  <div style="margin-top:50px;font-size:44px;font-weight:bold;color:#000;line-height:1.5;">itu artinya lo <span style="background:#000;color:#4ade80;padding:2px 14px;">5x lebih tekun</span> dari 90% farmer yang scroll lewat alpha.</div>
+  <div class="sticker" style="background:#ff2a6d;color:#fff;font-size:52px;margin-top:60px;transform:rotate(1.5deg);box-shadow:20px 20px 0 #000;">follow <span style="background:#fff;color:#000;">@onargudel</span><br>tekun kayak gini<br>layak dikasih sinyal 📡</div>
+  <div style="margin-top:50px;font-size:32px;color:#000;font-style:italic;">— iklan ini dibayar 1 follow.<br>iklan berikutnya gak akan sefair ini. 🐟</div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 6 — GRAVEYARD ═══ -->
+<div class="slide" style="background:#fff;">
+  <div class="num" style="color:#000;">06/08</div>
+  <div class="marquee" style="background:#000;color:#fff;position:absolute;top:0;left:-20px;right:-20px;">💀 KUBURAN EKSPERIMEN 💀 KUBURAN EKSPERIMEN 💀</div>
+  <div class="archivo" style="font-size:70px;margin-top:190px;color:#000;">pura-pura semuanya<br>jalan itu buat<br><span style="background:#ff2a6d;color:#fff;padding:0 20px;display:inline-block;transform:rotate(-1deg);">tim marketing.</span></div>
+  <div style="margin-top:60px;display:flex;flex-direction:column;gap:30px;">
+    <div style="border:6px solid #000;padding:26px;box-shadow:12px 12px 0 #ff2a6d;transform:rotate(0.5deg);"><span class="archivo" style="font-size:44px;">🪦 FreeLLMAPI</span><div style="font-size:34px;margin-top:8px;">failover kebukti. tapi maintenance &gt; nilai. R.I.P 🕯️</div></div>
+    <div style="border:6px solid #000;padding:26px;box-shadow:12px 12px 0 #00f0ff;transform:rotate(-0.7deg);"><span class="archivo" style="font-size:44px;">🪦 9Router</span><div style="font-size:34px;margin-top:8px;">installed, audited... "bersihin aja" kata bos. 🧹</div></div>
+    <div style="border:6px solid #000;padding:26px;box-shadow:12px 12px 0 #ffea00;transform:rotate(0.9deg);"><span class="archivo" style="font-size:44px;">🪦 Google Sheets</span><div style="font-size:34px;margin-top:8px;">dashboard rasa 2009. ganti Notion. DIHAPUS PERMANEN 🔥</div></div>
+    <div style="border:6px solid #000;padding:26px;box-shadow:12px 12px 0 #4ade80;transform:rotate(-0.5deg);"><span class="archivo" style="font-size:44px;">🪦 PKCE scripts</span><div style="font-size:34px;margin-top:8px;">di-hardened 10 security fixes 🛡️ ...terus MCP OAuth lewat. 😭</div></div>
+  </div>
+  <div style="margin-top:50px;font-size:32px;font-style:italic;">semua eksperimen mati dengan hormat.<br>gak ada secret yang ikut terkubur — scan dulu, selalu. 🔍</div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 7 — SECURITY ═══ -->
+<div class="slide" style="background:#ff2a6d;">
+  <div class="num" style="color:#fff;">07/08</div>
+  <div class="marquee" style="background:#000;color:#ffea00;position:absolute;top:0;left:-20px;right:-20px;transform:rotate(1.2deg);">🔒 ATURAN RUMAH 🔒 ATURAN RUMAH 🔒 ATURAN RUMAH</div>
+  <div style="margin-top:200px;display:flex;flex-direction:column;gap:26px;">
+    <div class="sticker" style="background:#fff;font-size:42px;transform:rotate(-1deg);">🤐 secret gak pernah ke-git.<br><b>even ke README lucu-lucuan.</b></div>
+    <div class="sticker" style="background:#000;color:#fff;font-size:42px;transform:rotate(0.8deg);">🔒 AI-nya sendiri GAK BISA pause project / narik keys.<br><span style="color:#ffea00;">dia audit dirinya. gue audit dia.</span></div>
+    <div class="sticker" style="background:#ffea00;font-size:42px;transform:rotate(-0.6deg);">🛡️ on-chain = BURNER only. main wallet? gak kenal sama terminal ini.</div>
+    <div class="sticker" style="background:#00f0ff;font-size:42px;transform:rotate(1.1deg);">✋ destructive = konfirmasi gue. sekali. abis itu gas.</div>
+    <div class="sticker" style="background:#fff;font-size:42px;transform:rotate(-1.3deg);">🚨 credential ke-paste di chat? revoke on sight.<br><i>termasuk punya gue sendiri jam 2 pagi 😑</i></div>
+  </div>
+  <div class="tape" style="bottom:260px;left:50px;transform:rotate(-3deg);background:#fff;font-size:40px;max-width:800px;line-height:1.4;">"tool yang butuh private key lo buat kerja...<br><b style="color:#ff2a6d;">itu bukan bot. itu HEIST pake README.</b>" 🚗💨🦹</div>
+  <div class="handle" style="color:#000;">@onargudel</div>
+</div>
+
+<!-- ═══ SLIDE 8 — CTA ═══ -->
+<div class="slide" style="background:#000;">
+  <div class="num" style="color:#00f0ff;">08/08</div>
+  <img src="assets/pfp.jpg" style="position:absolute;top:60px;right:60px;width:280px;height:280px;object-fit:cover;border:8px solid #ffea00;box-shadow:16px 16px 0 #ff2a6d;transform:rotate(4deg);z-index:30;">
+  <div class="marquee" style="background:#ffea00;color:#000;position:absolute;top:0;left:-20px;right:-20px;">ROADMAP 🛣️ ROADMAP 🛣️ ROADMAP 🛣️ ROADMAP</div>
+  <div style="margin-top:230px;font-size:44px;line-height:2.2;color:#fff;font-weight:bold;">
+    <div><span style="color:#4ade80;">[✅]</span> VPS migration</div>
+    <div><span style="color:#4ade80;">[✅]</span> Supabase + Notion</div>
+    <div><span style="color:#ff2a6d;">[ ]</span> X API scout ... <span style="color:#666;">duit 💸 obviously</span></div>
+    <div><span style="color:#ff2a6d;">[ ]</span> outcome tracking</div>
+    <div><span style="color:#ff2a6d;">[ ]</span> testnet farming ⚔️</div>
+    <div><span style="color:#00f0ff;">[ ]</span> ??? ... the fish<br>&nbsp;&nbsp;&nbsp;&nbsp;keeps swimming 🐟</div>
+  </div>
+  <div class="sticker" style="background:#ff2a6d;color:#fff;font-size:50px;margin-top:50px;transform:rotate(-2deg);box-shadow:18px 18px 0 #ffea00;"><span style="color:#ffea00;">[＊]</span> FOLLOW @onargudel<br><span style="font-size:36px;background:#fff;color:#000;padding:2px 12px;">SNEAKY ITEM. udah dari dulu seharusnya dicentang.</span></div>
+  <div class="archivo" style="margin-top:70px;font-size:72px;color:#fff;line-height:1.15;">ngmi? <span style="color:#ff2a6d;">gak.</span><br><span style="color:#00f0ff;">kita punya receipts.</span> 💅</div>
+  <div class="fish" style="color:#ffea00;margin-top:40px;">&gt;)))'&gt; 🐟 &lt;('(((&lt;</div>
+  <div class="handle" style="color:#fff;">@onargudel · github.com/urelkdubdqwr</div>
+</div>
+
+</body></html>
