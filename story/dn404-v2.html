@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, initial-scale=1">
+<title>DN404 × ARC</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --paper: #F2EFE6;
+  --ink: #0A0A0A;
+  --magenta: #ED0089;
+  --blue: #2B4EFF;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  width: 1080px;
+  height: 1350px;
+  background: var(--paper);
+}
+
+body {
+  overflow: hidden;
+  color: var(--ink);
+  font-family: "Space Mono", monospace;
+}
+
+.poster {
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12px 12px, rgba(10,10,10,.1) 0 2px, transparent 2.5px) 0 0 / 18px 18px,
+    var(--paper);
+  padding: 54px 58px 90px;
+}
+
+.poster:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .25;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 5px, rgba(10,10,10,.08) 6px),
+    repeating-linear-gradient(90deg, transparent 0 7px, rgba(237,0,137,.06) 8px);
+  mix-blend-mode: multiply;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 12px solid var(--ink);
+  padding-top: 18px;
+}
+
+.kicker {
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.edition {
+  background: var(--magenta);
+  border: 4px solid var(--ink);
+  padding: 8px 14px;
+  font-weight: 700;
+  transform: rotate(2deg);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+  margin-top: 24px;
+  width: 860px;
+}
+
+.hero h1 {
+  margin: 0;
+  color: var(--magenta);
+  font: 106px/0.88 "Archivo Black", sans-serif;
+  letter-spacing: -6px;
+  text-shadow: 9px 9px 0 var(--ink);
+  transform: rotate(-2deg);
+}
+
+.hero h2 {
+  display: inline-block;
+  margin: 27px 0 0;
+  padding: 11px 18px;
+  background: var(--blue);
+  border: 4px solid var(--ink);
+  color: var(--paper);
+  font: 27px/1 "Archivo Black", sans-serif;
+  letter-spacing: 1px;
+  box-shadow: 8px 8px 0 var(--ink);
+  transform: rotate(1deg);
+}
+
+.compare {
+  position: relative;
+  z-index: 1;
+  margin-top: 38px;
+  width: 964px;
+  border: 5px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 12px 12px 0 var(--magenta);
+  transform: rotate(-1deg);
+}
+
+.section-title {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 12px 18px;
+  font: 25px "Archivo Black", sans-serif;
+  letter-spacing: 2px;
+}
+
+.table {
+  display: grid;
+  grid-template-columns: 170px 1fr 1fr;
+  font-size: 17px;
+  line-height: 1.18;
+}
+
+.table > div {
+  min-height: 48px;
+  padding: 10px 13px;
+  border-right: 3px solid var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+
+.table > div:nth-child(3n) { border-right: 0; }
+.table > div:nth-last-child(-n+3) { border-bottom: 0; }
+
+.table .head {
+  background: var(--blue);
+  color: var(--paper);
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.table .label {
+  background: var(--magenta);
+  font-weight: 700;
+}
+
+.works {
+  position: relative;
+  z-index: 1;
+  margin-top: 42px;
+  width: 964px;
+  border: 5px solid var(--ink);
+  background: var(--blue);
+  box-shadow: 11px 11px 0 var(--ink);
+}
+
+.flow {
+  display: flex;
+  align-items: stretch;
+  padding: 22px 20px 26px;
+  gap: 12px;
+}
+
+.step {
+  flex: 1;
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 4px solid var(--ink);
+  background: var(--paper);
+  text-align: center;
+  font: 18px/1.1 "Archivo Black", sans-serif;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.step:nth-child(2) { background: var(--magenta); }
+.step:nth-child(3) { background: var(--paper); }
+.step:nth-child(4) { background: var(--magenta); }
+
+.arrow {
+  align-self: center;
+  color: var(--paper);
+  font: 31px "Archivo Black", sans-serif;
+}
+
+.supply {
+  position: relative;
+  z-index: 1;
+  margin: 42px auto 0;
+  width: 540px;
+  border: 5px solid var(--ink);
+  background: var(--magenta);
+  box-shadow: 10px 10px 0 var(--blue);
+  transform: rotate(1deg);
+}
+
+.supply-title {
+  padding: 10px 15px;
+  background: var(--ink);
+  color: var(--paper);
+  font: 23px "Archivo Black", sans-serif;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.supply-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.supply-grid div {
+  padding: 14px 8px;
+  border-right: 3px solid var(--ink);
+}
+
+.supply-grid div:last-child { border-right: 0; }
+
+.supply strong {
+  display: block;
+  font: 42px/1 "Archivo Black", sans-serif;
+}
+
+.supply span {
+  display: block;
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.total {
+  border-top: 4px solid var(--ink);
+  padding: 12px;
+  background: var(--paper);
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.marquee {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  width: 1080px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-top: 7px solid var(--ink);
+  background: var(--magenta);
+  color: var(--ink);
+  white-space: nowrap;
+  font: 25px "Archivo Black", sans-serif;
+  letter-spacing: 1px;
+}
+
+.marquee span {
+  padding-left: 25px;
+  animation: none;
+}
+
+.meta {
+  position: absolute;
+  z-index: 2;
+  top: 940px;
+  right: 58px;
+  width: 190px;
+  padding: 13px;
+  border: 4px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 8px 8px 0 var(--magenta);
+  font-size: 14px;
+  line-height: 1.4;
+  transform: rotate(3deg);
+}
+
+.meta b {
+  color: var(--blue);
+  font-size: 18px;
+}
+
+.stamp {
+  position: absolute;
+  z-index: 2;
+  left: 58px;
+  top: 960px;
+  width: 190px;
+  padding: 10px 13px;
+  border: 4px solid var(--ink);
+  background: var(--blue);
+  color: var(--paper);
+  font-weight: 700;
+  transform: rotate(-4deg);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+</style>
+</head>
+<body>
+  <main class="poster">
+    <header class="header">
+      <div class="kicker">AKA.FUN PRESENTS / HYBRID ASSET STANDARD</div>
+      <div class="edition">ERC-721 / ETHEREUM MAINNET</div>
+    </header>
+
+    <section class="hero">
+      <h1>DN404 × ARC</h1>
+      <h2>ONE COLLECTION. TWO MARKETS.</h2>
+    </section>
+
+    <section class="compare">
+      <div class="section-title">COMPARE</div>
+      <div class="table">
+        <div class="head"></div>
+        <div class="head">AKA.FUN</div>
+        <div class="head">TRADITIONAL</div>
+
+        <div class="label">ASSET</div>
+        <div>NFT + ERC20</div>
+        <div>NFT only</div>
+
+        <div class="label">TRADING</div>
+        <div>like any ERC20</div>
+        <div>hold and flip</div>
+
+        <div class="label">VALUE</div>
+        <div>fees flow to RWAs</div>
+        <div>vibes only</div>
+
+        <div class="label">SUPPLY</div>
+        <div>4,444 fixed</div>
+        <div>random</div>
+      </div>
+    </section>
+
+    <section class="works">
+      <div class="section-title">HOW IT WORKS</div>
+      <div class="flow">
+        <div class="step">BUYS<br>/ SELLS</div>
+        <div class="arrow">→</div>
+        <div class="step">USDC<br>FEES</div>
+        <div class="arrow">→</div>
+        <div class="step">RWAs</div>
+        <div class="arrow">→</div>
+        <div class="step">HOLDERS</div>
+      </div>
+    </section>
+
+    <div class="stamp">WHITELIST VIA AKA.FUN</div>
+
+    <aside class="meta">
+      <b>FEES ROUTE AS USDC</b><br>
+      into RWAs: $GOV $NVDA $TSLA $AAPL<br><br>
+      then to holders.
+    </aside>
+
+    <section class="supply">
+      <div class="supply-title">SUPPLY / FIXED FOREVER</div>
+      <div class="supply-grid">
+        <div>
+          <strong>2,222</strong>
+          <span>COMMUNITY MINT</span>
+        </div>
+        <div>
+          <strong>2,222</strong>
+          <span>LIQUIDITY RESERVE</span>
+        </div>
+      </div>
+      <div class="total">4,444 TOTAL FIXED</div>
+    </section>
+
+    <footer class="marquee">
+      <span>INFRA × CULTURE × YIELD ◆ DN404 ON ARC ◆ RECEIPTS &gt; VIBES</span>
+    </footer>
+  </main>
+</body>
+</html>

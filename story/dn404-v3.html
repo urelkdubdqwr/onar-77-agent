@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<title>DN404 on ARC — aka.fun</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root{
+  --cream:#F2EEE2;--card:#F4F1E8;--black:#0C0C0C;--ink:#111;
+  --gold:#D9A526;--lightgold:#E2A93B;--deepgold:#C8901F;
+  --purple:#8E2DE2;--blue:#1D9BF0;--hair:#C9C4B6;--darkhair:#3A3A3A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:#777}
+body{font-family:"Space Mono",monospace}
+.poster{width:1080px;height:1350px;margin:0 auto;overflow:hidden;background:var(--black);color:var(--cream)}
+.top{height:648px;background:var(--cream);color:var(--ink);padding:42px 42px 28px;position:relative;display:grid;grid-template-columns:60% 35%;gap:5%}
+.left{position:relative}
+.identity{display:flex;align-items:center;gap:15px}
+.avatar{width:68px;height:68px;background:var(--gold);flex:none}
+.name{font-family:Anton,sans-serif;font-size:28px;letter-spacing:.4px}
+.check{color:var(--blue);font-size:22px;margin-left:5px}
+.handle{font-size:14px;margin-top:4px;letter-spacing:.5px}
+.eyebrow{color:var(--deepgold);font-weight:700;font-size:13px;letter-spacing:2px;margin-top:33px}
+h1{font-family:Anton,sans-serif;font-size:82px;line-height:.93;letter-spacing:-1px;margin:12px 0 20px;max-width:650px}
+.underline{height:9px;width:440px;background:var(--gold);transform:rotate(-2deg);margin:-23px 0 20px 18px;border-radius:60% 20% 60% 15%}
+.bodycopy{font-size:15px;line-height:1.55;max-width:600px;margin:0 0 15px}
+.flow{display:inline-block;background:var(--gold);font-weight:700;padding:5px 9px;font-size:16px;letter-spacing:.2px}
+.cta{display:flex;align-items:center;gap:8px;margin-top:19px;font-size:13px;font-weight:700}
+.url{background:var(--gold);border-radius:18px;padding:8px 13px;font-size:12px}
+.ref{background:var(--ink);color:var(--cream);padding:8px 10px;font-size:12px}
+.handles{color:var(--deepgold);font-size:13px;font-weight:700;margin-top:16px;line-height:1.6}
+.hash{color:var(--ink)}
+.blackpanel{height:535px;background:var(--black);color:var(--cream);border:3px solid var(--gold);padding:14px;position:relative}
+.paneltitle{display:inline-block;border:1px solid var(--gold);color:var(--gold);font-size:11px;letter-spacing:1.4px;padding:7px 10px}
+.panelinner{border:1px solid var(--darkhair);height:465px;margin-top:12px;padding:24px 18px;position:relative}
+.panelnum{font-family:Anton,sans-serif;font-size:69px;line-height:.92;letter-spacing:1px}
+.panelcaption{color:var(--gold);font-size:12px;letter-spacing:1px;margin:5px 0 15px}
+.plus{font-family:Anton,sans-serif;color:var(--gold);font-size:78px;line-height:.7;margin:4px 0}
+.eye{position:absolute;bottom:18px;right:18px;color:var(--gold);font-size:30px;letter-spacing:-8px}
+.spark{position:absolute;right:17px;top:20px;width:28px;height:28px;background:var(--gold);color:var(--black);text-align:center;font-size:25px;line-height:28px}
+.signature{position:absolute;right:20px;bottom:16px;font-family:"Permanent Marker";font-size:18px;color:var(--gold);transform:rotate(-9deg)}
+.seam{height:18px;background:linear-gradient(var(--cream),var(--black))}
+.bottom{height:594px;background:var(--black);padding:22px 42px 0;color:var(--cream);position:relative}
+.strip{height:45px;display:flex;align-items:center;justify-content:center;position:relative}
+.dots{position:absolute;left:0;display:flex;gap:7px}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--gold)}
+.striptitle{background:var(--black);border:1px solid var(--gold);border-radius:18px;color:var(--gold);font-family:Anton;font-size:22px;letter-spacing:1px;padding:8px 28px}
+.tape{position:absolute;right:0;background:#777;color:#ddd;padding:7px 13px;font-size:10px;transform:rotate(2deg)}
+.content{display:grid;grid-template-columns:32% 65%;gap:3%;margin-top:18px}
+.cards{display:flex;flex-direction:column;gap:13px}
+.card{background:var(--card);color:var(--ink);padding:14px 16px;position:relative}
+.cardtab{position:absolute;top:-11px;left:13px;background:var(--gold);font-weight:700;font-size:11px;padding:4px 8px}
+.definition{font-size:13px;line-height:1.45;padding-top:5px}
+.steps{padding-top:6px}
+.step{display:flex;align-items:center;gap:9px;font-size:11px;line-height:1.2;margin:9px 0}
+.node{background:var(--black);color:var(--gold);border-radius:6px;width:25px;height:25px;text-align:center;padding-top:5px;font-weight:700;flex:none}
+.arrow{color:var(--gold);font-size:19px;text-align:center;margin:-7px 0}
+.ticker{background:var(--black);color:var(--cream);padding:4px 6px;font-size:9px;margin-top:8px}
+.supply{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:8px}
+.stat{border-top:2px solid var(--gold);padding-top:7px}
+.stat b{font-family:Anton;font-size:24px;color:var(--deepgold);display:block}
+.stat span{font-size:9px;line-height:1.2;display:block}
+.compare{position:relative;padding-top:5px}
+.comparetab{position:absolute;top:-14px;left:15px;background:var(--purple);color:white;font-weight:700;font-size:13px;padding:6px 16px;letter-spacing:1px}
+table{width:100%;border-collapse:collapse;font-size:10px;line-height:1.25;margin-top:12px}
+th,td{border:1px solid var(--darkhair);padding:8px 7px;text-align:left;vertical-align:top}
+th{font-family:Anton;font-size:15px;letter-spacing:.7px}
+th:first-child{background:var(--black);width:23%}
+th:nth-child(2){background:var(--gold);color:var(--black)}
+th:nth-child(3){background:var(--black);color:var(--cream)}
+td:first-child{background:var(--black);color:var(--cream);font-weight:700}
+td:nth-child(2){background:var(--card);color:var(--ink)}
+td:nth-child(3){background:var(--black);color:var(--cream)}
+.taglines{margin-top:14px;font-family:Anton;font-size:24px;line-height:1.08}
+.taglines .goldline{color:var(--gold);text-decoration:underline;text-decoration-thickness:3px}
+.taglines .purplebar{display:inline;background:var(--purple);color:white;padding:2px 7px}
+.taglines .script{font-family:"Permanent Marker";font-size:22px;color:var(--purple);display:block;transform:rotate(-2deg);margin-top:7px}
+.footer{position:absolute;bottom:0;left:0;right:0;height:82px;border-top:1px solid var(--darkhair);display:flex;align-items:center;padding:0 42px;gap:22px;font-size:11px}
+.footer strong{color:var(--gold);font-size:13px}
+.footer .white{color:white}
+.barcode{width:115px;height:38px;background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 5px,#fff 5px 6px,transparent 6px 9px)}
+.meta{font-size:9px;color:#aaa;line-height:1.35;margin-left:auto}
+</style>
+</head>
+<body>
+<main class="poster">
+  <section class="top">
+    <div class="left">
+      <div class="identity">
+        <div class="avatar"></div>
+        <div>
+          <div class="name">ONARGUDEL <span class="check">✓</span></div>
+          <div class="handle">@onargudel</div>
+        </div>
+      </div>
+      <div class="eyebrow">DN404 ON ARC / BY AKA.FUN</div>
+      <h1>NFT + ERC-20.<br>1 COLLECTION,<br>2 MARKETS.</h1>
+      <div class="underline"></div>
+      <p class="bodycopy">one collection = one ERC-20 token + one NFT, trades like any ERC20, held and collected as NFT</p>
+      <div class="flow">Fees → RWAs → Distributed to holders</div>
+      <p class="bodycopy" style="margin-top:8px">RWAs: $GOV $NVDA $TSLA $AAPL</p>
+      <div class="cta">
+        <span>WHITELIST NOW →</span>
+        <span class="url">aka.fun/whitelist?ref=VDDQTKVF</span>
+        <span class="ref">REF CODE: VDDQTKVF</span>
+      </div>
+      <div class="handles">@akafun &nbsp; @arcdotfun &nbsp; <span class="hash">#DN404 #ARC</span></div>
+    </div>
+
+    <aside class="blackpanel">
+      <div class="paneltitle">DN404 / TWO MARKETS</div>
+      <div class="panelinner">
+        <div class="panelnum">1 TOKEN</div>
+        <div class="panelcaption">TRADES LIKE ANY ERC20</div>
+        <div class="plus">+</div>
+        <div class="panelnum">1 NFT</div>
+        <div class="panelcaption">HELD, SHOWN, COLLECTED</div>
+        <div class="eye">◉ ◉ ◉</div>
+      </div>
+      <div class="spark">✦</div>
+      <div class="signature">aka.fun</div>
+    </aside>
+  </section>
+
+  <div class="seam"></div>
+
+  <section class="bottom">
+    <header class="strip">
+      <div class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="striptitle">WHAT IT IS &amp; HOW IT WORKS</div>
+      <div class="tape">ARC BUILDS DIFFERENT.</div>
+    </header>
+
+    <div class="content">
+      <div class="cards">
+        <article class="card">
+          <div class="cardtab">DEFINITION</div>
+          <div class="definition">one collection = one ERC-20 token + one NFT. trades like any ERC20, held and collected as NFT</div>
+        </article>
+
+        <article class="card steps">
+          <div class="cardtab">HOW IT WORKS</div>
+          <div class="step"><span class="node">1</span><span>ONE COLLECTION<br>ONE ERC-20 + ONE NFT</span></div>
+          <div class="arrow">↓</div>
+          <div class="step"><span class="node">2</span><span>TRADE THE TOKEN<br>LIKE ANY ERC20</span></div>
+          <div class="arrow">↓</div>
+          <div class="step"><span class="node">3</span><span>HOLD, SHOW,<br>COLLECT THE NFT</span></div>
+          <div class="ticker">FEES → RWAs → DISTRIBUTED TO HOLDERS</div>
+        </article>
+
+        <article class="card">
+          <div class="cardtab">SUPPLY</div>
+          <div class="supply">
+            <div class="stat"><b>2,222</b><span>COMMUNITY<br>MINT</span></div>
+            <div class="stat"><b>2,222</b><span>LIQUIDITY<br>RESERVE</span></div>
+            <div class="stat"><b>4,444</b><span>TOTAL<br>SUPPLY</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="compare">
+        <div class="comparetab">COMPARE</div>
+        <table>
+          <tr><th></th><th>AKA.FUN</th><th>TRADITIONAL</th></tr>
+          <tr><td>ASSET TYPE</td><td>NFT + ERC20</td><td>NFT only</td></tr>
+          <tr><td>TRADING EXPERIENCE</td><td>liquid, like any ERC20</td><td>illiquid, hold and flip</td></tr>
+          <tr><td>UTILITY</td><td>token + collectible</td><td>profile pic only</td></tr>
+          <tr><td>HOLDER VALUE</td><td>fees flow to RWAs</td><td>vibes only</td></tr>
+          <tr><td>SUPPLY</td><td>4,444 fixed</td><td>varies by project</td></tr>
+          <tr><td>ONCHAIN MARKET</td><td>yes</td><td>limited</td></tr>
+        </table>
+        <div class="taglines">
+          <div class="goldline">THIS ISN'T JUST ANOTHER NFT.</div>
+          <div class="purplebar">THIS IS INFRA × CULTURE × YIELD.</div>
+          <div class="script">ARC BUILDS DIFFERENT.</div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <strong>WHITELIST NOW →</strong>
+      <span class="white">https://aka.fun/whitelist?ref=VDDQTKVF</span>
+      <span class="white">REF CODE: VDDQTKVF</span>
+      <div class="barcode"></div>
+      <div class="meta">AKA.FUN / DN404 ON ARC<br>@akafun · @arcdotfun</div>
+    </footer>
+  </section>
+</main>
+</body>
+</html>

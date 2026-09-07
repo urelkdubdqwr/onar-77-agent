@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=VT323&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#111;display:flex;flex-direction:column;gap:40px;align-items:center;padding:40px;font-family:'Space Mono',monospace}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;background:#0a0014}
+.term{position:absolute;inset:0;background:
+  repeating-linear-gradient(0deg,rgba(168,85,247,.06) 0 2px,transparent 2px 4px),
+  radial-gradient(ellipse at 50% 30%,#2a0a4a 0%,#0a0014 70%)}
+.scan{position:absolute;inset:0;background:linear-gradient(180deg,transparent 0%,rgba(237,0,137,.08) 50%,transparent 100%);height:300px;top:200px}
+.prompt{position:absolute;top:70px;left:60px;font-family:'VT323',monospace;font-size:44px;color:#a855f7;text-shadow:0 0 12px #a855f7}
+.prompt b{color:#e9d5ff}
+.led{position:absolute;top:170px;left:60px;right:60px;background:#050008;border:6px solid #a855f7;box-shadow:12px 12px 0 #000,0 0 40px rgba(168,85,247,.5) inset;padding:36px 30px;text-align:center}
+.led .t{font-family:'VT323',monospace;font-size:120px;color:#ED0089;text-shadow:0 0 24px #ED0089;letter-spacing:4px;line-height:.95}
+.led .s{font-family:'VT323',monospace;font-size:40px;color:#f0abfc;margin-top:10px}
+.sticker{position:absolute;background:#ED0089;color:#000;font-family:'Archivo Black',sans-serif;padding:18px 26px;font-size:38px;box-shadow:10px 10px 0 #000;border:4px solid #000}
+.s1{top:480px;left:50px;transform:rotate(-4deg)}
+.s2{top:470px;right:40px;transform:rotate(3deg);background:#a855f7;color:#fff}
+.s3{top:610px;left:300px;transform:rotate(2deg);background:#facc15}
+.big{position:absolute;top:730px;left:0;right:0;text-align:center;font-family:'Archivo Black',sans-serif;color:#fff;font-size:96px;line-height:1.02;text-shadow:8px 8px 0 #a855f7}
+.big em{font-style:normal;color:#ED0089}
+.quote{position:absolute;top:1010px;left:80px;right:80px;background:#fff;color:#000;font-size:34px;font-weight:700;padding:26px 30px;transform:rotate(-1.2deg);box-shadow:12px 12px 0 #000;border:4px solid #000;line-height:1.35}
+.quote span{color:#a855f7}
+.tape{position:absolute;top:985px;left:120px;background:#facc15;color:#000;font-family:'Archivo Black';font-size:24px;padding:8px 22px;transform:rotate(-6deg);border:3px solid #000;box-shadow:6px 6px 0 #000}
+.url{position:absolute;bottom:150px;left:0;right:0;text-align:center;font-family:'VT323',monospace;font-size:52px;color:#e9d5ff;text-shadow:0 0 14px #a855f7}
+.marquee{position:absolute;bottom:0;left:0;right:0;background:#ED0089;color:#000;font-family:'Archivo Black';font-size:30px;padding:16px 0;white-space:nowrap;overflow:hidden;border-top:5px solid #000}
+.marquee span{display:inline-block;padding-left:100%;animation:none}
+.pfp{position:absolute;bottom:60px;right:50px;width:130px;height:130px;border:5px solid #fff;box-shadow:8px 8px 0 #000;transform:rotate(4deg);object-fit:cover;z-index:5}
+.handle{position:absolute;bottom:75px;left:50px;font-family:'Archivo Black';font-size:36px;color:#fff;text-shadow:4px 4px 0 #a855f7;z-index:5}
+.grain{position:absolute;inset:0;opacity:.18;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");mix-blend-mode:overlay;pointer-events:none}
+.corner{position:absolute;top:20px;right:30px;font-family:'VT323';font-size:34px;color:#7e22ce}
+</style></head><body>
+<div class="slide">
+  <div class="term"></div><div class="scan"></div>
+  <div class="corner">ETH MAINNET ●</div>
+  <div class="prompt">koko@mint:~/3333$ <b>./confidence --level MAX</b></div>
+  <div class="led">
+    <div class="t">3,333</div>
+    <div class="s">FACES STANDING BY — SUPPLY TIGHT, CONVICTION LOUD</div>
+  </div>
+  <div class="sticker s1">SMALL SUPPLY</div>
+  <div class="sticker s2">NO FOMO</div>
+  <div class="sticker s3">JUST MATH</div>
+  <div class="big">3,333 FACES.<br><em>ONE</em> COUNTDOWN.</div>
+  <div class="tape">FACTS ONLY</div>
+  <div class="quote">"Collections teriak buat hype. Yang 3,333 supply? <span>Ngitungin sisa detik aja.</span>"</div>
+  <div class="url">kokomoji.art ▸ T-MINUS 3D</div>
+  <div class="handle">@onargudel</div>
+  <img class="pfp" src="pfp.jpg">
+  <div class="marquee"><span>◆ KOKOMOJI ERC-721 ◆ 3,333 SUPPLY ◆ ETH MAINNET ◆ COUNTDOWN LIVE ◆ receipts &gt; vibes ◆&nbsp;</span></div>
+  <div class="grain"></div>
+</div>
+</body></html>

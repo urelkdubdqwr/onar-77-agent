@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>KOKOMOJI — ONAR Poster</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Space+Mono:wght@400;700&family=Permanent+Marker&display=swap');
+
+:root{
+  --cream:#F2EEE2;--card:#F4F1E8;--ink:#0C0C0C;--text:#111;
+  --gold:#D9A526;--lightgold:#E2A93B;--deepgold:#C8901F;
+  --purple:#8E2DE2;--blue:#1D9BF0;--hair:#C9C4B6;--darkhair:#3A3A3A;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--cream)}
+body{font-family:'Space Mono',monospace}
+.poster{width:1080px;height:1350px;overflow:hidden;background:var(--ink);color:white}
+.top{height:648px;background:var(--cream);color:var(--text);padding:42px 48px 38px;display:grid;grid-template-columns:600px 340px;gap:38px;position:relative}
+.top:after{content:"";position:absolute;bottom:0;left:0;right:0;height:8px;background:var(--ink)}
+.profile{display:flex;align-items:center;gap:16px;height:72px}
+.avatar{width:68px;height:68px;background:var(--gold);flex:none}
+.name{font:bold 22px Arial,sans-serif;letter-spacing:-.5px}
+.verified{color:var(--blue);font:bold 17px Arial}
+.handle{font-size:14px;letter-spacing:.3px;margin-top:5px}
+.eyebrow{font-weight:bold;color:var(--deepgold);font-size:15px;letter-spacing:1.2px;margin-top:30px}
+h1{font-family:'Anton',sans-serif;font-size:83px;line-height:.94;letter-spacing:-1px;margin:10px 0 25px;max-width:600px}
+.swoosh{position:relative;display:inline-block}
+.swoosh:after{content:"";position:absolute;height:8px;background:var(--gold);left:3px;right:-5px;bottom:1px;border-radius:60% 20%;transform:rotate(-2deg);z-index:0}
+.swoosh span{position:relative;z-index:1}
+.copy{font-size:14px;line-height:1.55;max-width:570px}
+.highlight{display:inline-block;background:var(--gold);font-weight:bold;padding:6px 9px;margin-top:18px;font-size:13px}
+.cta-row{display:flex;align-items:center;gap:10px;margin-top:18px}
+.cta{background:var(--gold);border-radius:20px;padding:10px 15px;font-weight:bold;font-size:12px}
+.chip{background:var(--ink);color:white;border-radius:16px;padding:9px 13px;font-size:11px;font-weight:bold}
+.tags{margin-top:15px;color:var(--deepgold);font-size:12px;font-weight:bold}
+.tags b{color:var(--ink)}
+.terminal{background:var(--ink);padding:22px 20px 20px;position:relative;height:520px;color:white}
+.terminal-title{display:inline-block;border:2px solid var(--gold);color:var(--gold);padding:8px 11px;font-size:11px;font-weight:bold;letter-spacing:.7px}
+.screen{border:1px solid var(--darkhair);height:374px;margin-top:14px;padding:20px 17px;position:relative}
+.prompt{color:var(--gold);font-size:11px;white-space:nowrap}
+.led{font-family:'Anton',sans-serif;font-size:53px;letter-spacing:4px;margin-top:45px;text-align:center;color:#fff}
+.labels{display:flex;justify-content:space-around;color:var(--gold);font-size:9px;margin-top:3px}
+.standby{text-align:center;font-size:11px;margin-top:43px;letter-spacing:.3px}
+.cursor{width:27px;height:22px;background:var(--gold);margin:16px auto;animation:blink 1s steps(2,end) infinite}
+.start{position:absolute;bottom:19px;left:0;right:0;text-align:center;color:var(--gold);font:bold 18px 'Space Mono'}
+@keyframes blink{50%{opacity:.2}}
+.bottom{height:702px;background:var(--ink);padding:27px 48px 0;position:relative}
+.strip{height:42px;border-bottom:1px solid var(--darkhair);display:flex;align-items:start;gap:7px}
+.dot{width:9px;height:9px;background:var(--gold);border-radius:50%;margin-top:4px}
+.strip-title{font-family:'Anton';font-size:25px;letter-spacing:1px;color:var(--gold);margin-left:35px}
+.strip-title span{background:var(--ink);padding:5px 14px}
+.content{display:grid;grid-template-columns:330px 1fr;gap:32px;margin-top:18px}
+.card{background:var(--card);color:var(--text);padding:14px 15px 12px;margin-bottom:10px;position:relative}
+.card h2,.compare h2{font-family:'Anton';font-size:23px;letter-spacing:.5px;margin:0 0 12px}
+.card p{font-size:11px;line-height:1.55;margin:0}
+.tab{position:absolute;top:-11px;left:13px;background:var(--gold);padding:5px 10px;font-size:10px;font-weight:bold}
+.steps{display:flex;flex-direction:column;gap:5px}
+.step{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:bold}
+.node{width:22px;height:22px;background:var(--ink);color:var(--gold);display:grid;place-items:center;border-radius:5px}
+.arrow{text-align:center;color:var(--gold);font-size:16px;margin-left:5px}
+.supply{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.stat strong{display:block;color:var(--gold);font-family:'Anton';font-size:28px}
+.stat small{font-size:8px;line-height:1.2}
+.blackbar{background:var(--ink);color:var(--gold);font-size:10px;font-weight:bold;padding:8px;margin-top:9px}
+.compare{position:relative;padding-top:8px}
+.compare h2{color:var(--gold);font-size:28px;margin-bottom:15px}
+.compare-tab{position:absolute;top:-10px;left:0;background:var(--purple);color:white;padding:7px 15px;font-size:11px;font-weight:bold}
+table{width:100%;border-collapse:collapse;font-size:10px;line-height:1.4}
+th,td{border:1px solid var(--darkhair);padding:11px 10px;text-align:left}
+th{color:var(--gold);font-weight:bold}
+td:first-child{color:var(--gold);font-weight:bold;width:95px}
+.manifesto{margin-top:18px}
+.goldline{font-family:'Anton';font-size:25px;color:var(--gold);border-bottom:5px solid var(--gold);display:inline-block;padding-bottom:3px}
+.purpleline{background:var(--purple);font-family:'Anton';font-size:24px;padding:7px 12px;margin-top:13px;display:inline-block}
+.script{font-family:'Permanent Marker';font-size:21px;color:var(--purple);margin-top:18px;transform:rotate(-3deg)}
+.footer{position:absolute;left:0;right:0;bottom:0;height:64px;border-top:1px solid var(--darkhair);display:flex;align-items:center;padding:0 48px 0 320px;gap:20px;color:var(--gold);font-size:11px;font-weight:bold}
+.footer .url{color:white}
+.barcode{width:92px;height:34px;background:repeating-linear-gradient(90deg,#fff 0 2px,transparent 2px 5px,#fff 5px 6px,transparent 6px 9px)}
+.meta{color:white;font-size:8px;margin-left:auto}
+</style>
+</head>
+<body>
+<main class="poster">
+<section class="top">
+  <div>
+    <div class="profile">
+      <div class="avatar"></div>
+      <div><div class="name">ONARGUDEL <span class="verified">✓</span></div><div class="handle">@onargudel</div></div>
+    </div>
+    <div class="eyebrow">KOKOMOJI ON ETH:</div>
+    <h1>PRESS START.<br><span class="swoosh"><span>T-MINUS 3 DAYS.</span></span></h1>
+    <p class="copy">The mint countdown is live on an arcade terminal site — 3,333 faces assembled on-chain, ERC-721, Ethereum mainnet.</p>
+    <div class="highlight">3,333 FACES. HARD-CAPPED. NO REPRINTS.</div>
+    <div class="cta-row"><div class="cta">ENTER TERMINAL → kokomoji.art</div><div class="chip">T-MINUS: 3D</div></div>
+    <div class="tags">@Kokomojinft &nbsp; <b>#KOKOMOJI</b> &nbsp; <b>#ETH</b></div>
+  </div>
+  <aside class="terminal">
+    <div class="terminal-title">KOKOMINT TERMINAL V1.0</div>
+    <div class="screen">
+      <div class="prompt">koko@mint:~/3333$ ./countdown --to-mint</div>
+      <div class="led">03 : 02 : 03 : 56</div>
+      <div class="labels"><span>DAYS</span><span>HOURS</span><span>MIN</span><span>SEC</span></div>
+      <div class="standby">3,333 FACES STANDING BY</div>
+      <div class="cursor"></div>
+      <div class="start">▶ PRESS START</div>
+    </div>
+  </aside>
+</section>
+
+<section class="bottom">
+  <div class="strip"><i class="dot"></i><i class="dot"></i><i class="dot"></i><div class="strip-title"><span>WHAT IT IS &amp; HOW IT WORKS</span></div></div>
+  <div class="content">
+    <div>
+      <article class="card"><div class="tab">DEFINITION</div><h2>WHAT IS KOKOMOJI</h2><p>3,333 ERC-721 faces assembled on-chain, minted via an arcade countdown site, Ethereum mainnet.</p></article>
+      <article class="card"><div class="tab">PROCESS</div><h2>HOW IT WORKS</h2><div class="steps">
+        <div class="step"><span class="node">1</span> COUNTDOWN ON SITE</div><div class="arrow">↓</div>
+        <div class="step"><span class="node">2</span> MINT WINDOW OPENS</div><div class="arrow">↓</div>
+        <div class="step"><span class="node">3</span> 3,333 FACES CLAIMED</div>
+      </div><div class="blackbar">ASSEMBLED ON-CHAIN. GAME OVER FOR FOMO.</div></article>
+      <article class="card"><div class="tab">NUMBERS</div><h2>SUPPLY</h2><div class="supply"><div class="stat"><strong>3,333</strong><small>MAX SUPPLY</small></div><div class="stat"><strong>1</strong><small>MINT CONTRACT</small></div><div class="stat"><strong>0</strong><small>REPRINTS</small></div></div></article>
+    </div>
+    <div class="compare">
+      <div class="compare-tab">COMPARE</div>
+      <h2>THE TERMINAL ADVANTAGE</h2>
+      <table><thead><tr><th></th><th>COMPARED</th><th>OTHER DROPS</th></tr></thead><tbody>
+        <tr><td>SITE</td><td>arcade terminal with live countdown</td><td>static landing page</td></tr>
+        <tr><td>SUPPLY</td><td>3,333 hard cap</td><td>10k+ dilution</td></tr>
+        <tr><td>CHAIN</td><td>Ethereum mainnet</td><td>testnet hype</td></tr>
+        <tr><td>VIBES</td><td>assembled on-chain</td><td>roadmap promises</td></tr>
+      </tbody></table>
+      <div class="manifesto"><div class="goldline">THIS ISN'T JUST ANOTHER PFP.</div><div class="purpleline">THIS IS SMALL SUPPLY, BIG CONVICTION.</div><div class="script">INSERT COIN. MINT ANYWAY.</div></div>
+    </div>
+  </div>
+  <footer class="footer"><span>ENTER TERMINAL →</span><span class="url">kokomoji.art</span><span class="chip">T-MINUS 3D</span><div class="barcode"></div><span class="meta">KOKOMOJI / KOKOMINT TERMINAL V1.0</span></footer>
+</section>
+</main>
+</body>
+</html>

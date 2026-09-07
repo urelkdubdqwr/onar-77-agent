@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DN404 × ARC — aka.fun</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap');
+
+    :root {
+      --paper: #f2efe6;
+      --ink: #090909;
+      --pink: #ed0089;
+      --blue: #2b4eff;
+      --white: #fffdf7;
+      --shadow: 10px 10px 0 var(--ink);
+      --border: 5px solid var(--ink);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: "Space Mono", monospace;
+      overflow-x: hidden;
+    }
+
+    .poster {
+      position: relative;
+      width: 1080px;
+      height: 1350px;
+      margin: 0 auto;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(237,0,137,.16) 0 2px, transparent 2.5px),
+        radial-gradient(circle at 76% 63%, rgba(43,78,255,.14) 0 2px, transparent 2.5px),
+        var(--paper);
+      background-size: 12px 12px, 15px 15px, auto;
+      isolation: isolate;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .15;
+      mix-blend-mode: multiply;
+      background-image:
+        repeating-radial-gradient(circle at 20% 30%, #000 0 1px, transparent 1px 4px),
+        repeating-linear-gradient(97deg, transparent 0 3px, rgba(0,0,0,.35) 4px, transparent 5px 8px);
+      background-size: 7px 7px, 13px 13px;
+    }
+
+    .torn {
+      position: absolute;
+      z-index: 1;
+      background: var(--pink);
+      width: 150%;
+      height: 130px;
+      left: -20%;
+      top: 185px;
+      transform: rotate(-7deg);
+      clip-path: polygon(0 12%, 6% 19%, 12% 8%, 20% 17%, 28% 5%, 38% 16%, 49% 8%, 60% 18%, 71% 7%, 81% 15%, 91% 4%, 100% 12%, 100% 83%, 92% 90%, 83% 82%, 73% 94%, 62% 84%, 52% 96%, 41% 84%, 30% 95%, 20% 82%, 10% 91%, 0 79%);
+      opacity: .9;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 3;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 42px;
+      border-bottom: var(--border);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: .04em;
+    }
+
+    .topbar span:last-child {
+      color: var(--pink);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 3;
+      padding: 50px 42px 30px;
+      min-height: 285px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--blue);
+      color: var(--white);
+      border: var(--border);
+      box-shadow: 7px 7px 0 var(--ink);
+      transform: rotate(-2deg);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    h1 {
+      margin: 24px 0 0;
+      max-width: 900px;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 111px;
+      line-height: .84;
+      letter-spacing: -0.075em;
+      text-transform: uppercase;
+      color: var(--ink);
+      text-shadow: 8px 8px 0 var(--pink);
+    }
+
+    .hero-sub {
+      display: inline-block;
+      margin-top: 23px;
+      padding: 10px 18px 8px;
+      background: var(--white);
+      border: var(--border);
+      box-shadow: var(--shadow);
+      font-family: "Archivo Black", sans-serif;
+      font-size: 25px;
+      letter-spacing: -.04em;
+      transform: rotate(1.5deg);
+    }
+
+    .intro {
+      position: absolute;
+      right: 42px;
+      top: 61px;
+      width: 235px;
+      padding: 16px;
+      border: var(--border);
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      transform: rotate(4deg);
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .section-title {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 7px 12px 5px;
+      border: 4px solid var(--ink);
+      background: var(--pink);
+      font-family: "Archivo Black", sans-serif;
+      font-size: 26px;
+      letter-spacing: -.03em;
+      line-height: 1;
+      box-shadow: 6px 6px 0 var(--ink);
+    }
+
+    .compare {
+      position: relative;
+      z-index: 4;
+      margin: 5px 42px 0;
+      border: var(--border);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .compare-head,
+    .compare-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr 1.3fr;
+    }
+
+    .compare-head {
+      background: var(--ink);
+      color: var(--white);
+      font-family: "Archivo Black", sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+    }
+
+    .compare-head div,
+    .compare-row div {
+      min-height: 46px;
+      padding: 9px 13px;
+      border-right: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+    }
+
+    .compare-head div:last-child,
+    .compare-row div:last-child {
+      border-right: 0;
+    }
+
+    .compare-row:last-child div {
+      border-bottom: 0;
+    }
+
+    .compare-row {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    .compare-row:nth-child(odd) {
+      background: rgba(237,0,137,.17);
+    }
+
+    .compare-row div:first-child {
+      font-family: "Archivo Black", sans-serif;
+      text-transform: uppercase;
+      background: var(--paper);
+    }
+
+    .compare-row div:nth-child(2) {
+      color: var(--blue);
+    }
+
+    .compare-row div:nth-child(3) {
+      color: var(--ink);
+    }
+
+    .flow {
+      position: relative;
+      z-index: 3;
+      margin: 40px 42px 0;
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 23px;
+      align-items: center;
+    }
+
+    .sticker {
+      position: relative;
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 11px;
+      border: var(--border);
+      background: var(--blue);
+      color: var(--white);
+      box-shadow: 8px 8px 0 var(--ink);
+      text-align: center;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 21px;
+      line-height: 1.02;
+      transform: rotate(-2deg);
+    }
+
+    .sticker:nth-child(2) {
+      background: var(--pink);
+      color: var(--ink);
+      transform: rotate(2deg);
+    }
+
+    .sticker:nth-child(3) {
+      background: var(--white);
+      color: var(--ink);
+      transform: rotate(-1deg);
+    }
+
+    .sticker:nth-child(4) {
+      background: var(--ink);
+      color: var(--pink);
+      transform: rotate(3deg);
+    }
+
+    .sticker:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -38px;
+      top: 24px;
+      z-index: 5;
+      color: var(--ink);
+      font-family: "Archivo Black", sans-serif;
+      font-size: 35px;
+      text-shadow: 3px 3px 0 var(--pink);
+    }
+
+    .asset-line {
+      margin-top: 9px;
+      font-size: 12px;
+      line-height: 1.25;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .supply {
+      position: relative;
+      z-index: 3;
+      margin: 36px 42px 0;
+    }
+
+    .supply-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .supply-card {
+      padding: 14px 16px;
+      border: var(--border);
+      background: var(--white);
+      box-shadow: 7px 7px 0 var(--ink);
+      transform: rotate(-1.5deg);
+    }
+
+    .supply-card:nth-child(2) {
+      background: var(--pink);
+      transform: rotate(1.5deg);
+    }
+
+    .supply-card:nth-child(3) {
+      background: var(--blue);
+      color: var(--white);
+      transform: rotate(-2deg);
+    }
+
+    .supply-card strong {
+      display: block;
+      font-family: "Archivo Black", sans-serif;
+      font-size: 29px;
+      line-height: .95;
+      letter-spacing: -.05em;
+    }
+
+    .supply-card small {
+      display: block;
+      margin-top: 9px;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .ticker {
+      position: absolute;
+      z-index: 8;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-top: var(--border);
+      border-bottom: var(--border);
+      background: var(--ink);
+      color: var(--paper);
+      white-space: nowrap;
+      transform: rotate(-1deg) scale(1.03);
+    }
+
+    .ticker-track {
+      font-family: "Archivo Black", sans-serif;
+      font-size: 25px;
+      letter-spacing: -.02em;
+      animation: scroll 18s linear infinite;
+    }
+
+    .ticker-track span {
+      color: var(--pink);
+      margin: 0 18px;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-35%); }
+    }
+
+    .watermark {
+      position: absolute;
+      z-index: 9;
+      bottom: 91px;
+      left: 44px;
+      font-size: 13px;
+      font-weight: 700;
+      opacity: .65;
+      transform: rotate(-3deg);
+    }
+
+    .pfp {
+      position: absolute;
+      z-index: 9;
+      right: 42px;
+      bottom: 88px;
+      width: 110px;
+      height: 110px;
+      border: 8px solid var(--ink);
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--pink);
+      transform: rotate(7deg);
+      box-shadow: 7px 7px 0 var(--pink);
+    }
+
+    .micro-label {
+      position: absolute;
+      right: 172px;
+      bottom: 106px;
+      z-index: 9;
+      padding: 5px 8px;
+      border: 3px solid var(--ink);
+      background: var(--white);
+      font-size: 11px;
+      font-weight: 700;
+      transform: rotate(-5deg);
+    }
+
+    @media (max-width: 1100px) {
+      .poster {
+        transform-origin: top left;
+        transform: scale(calc(100vw / 1080));
+        margin-bottom: calc(-1350px + 100vw * 1.25);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster" aria-label="DN404 on ARC social poster">
+    <div class="torn"></div>
+
+    <header class="topbar">
+      <span>AKA.FUN / ARC ECOSYSTEM</span>
+      <span>HYBRID ASSET STANDARD_001</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">DN404 ON ARC / aka.fun</div>
+      <h1>DN404<br>× ARC</h1>
+      <div class="hero-sub">ONE COLLECTION. TWO MARKETS.</div>
+
+      <div class="intro">
+        ONE COLLECTION<br>
+        = ONE ERC-20 TOKEN<br>
+        + ONE NFT<br><br>
+        Trade the culture.<br>
+        Route the receipts.
+      </div>
+    </section>
+
+    <section class="compare" aria-labelledby="compare-title">
+      <h2 id="compare-title" class="section-title">COMPARE_//</h2>
+      <div class="compare-head">
+        <div>Metric</div>
+        <div>AKA.FUN</div>
+        <div>TRADITIONAL</div>
+      </div>
+      <div class="compare-row">
+        <div>Asset</div>
+        <div>NFT + ERC20</div>
+        <div>NFT only</div>
+      </div>
+      <div class="compare-row">
+        <div>Trading</div>
+        <div>Like any ERC20</div>
+        <div>Hold-and-flip</div>
+      </div>
+      <div class="compare-row">
+        <div>Value</div>
+        <div>Fees flow to RWAs</div>
+        <div>Vibes only</div>
+      </div>
+      <div class="compare-row">
+        <div>Supply</div>
+        <div>4,444</div>
+        <div>Random</div>
+      </div>
+    </section>
+
+    <section class="flow" aria-labelledby="flow-title">
+      <h2 id="flow-title" class="section-title">HOW IT WORKS_//</h2>
+      <div class="flow-grid">
+        <div>
+          <div class="sticker">BUYS /<br>SELLS</div>
+          <div class="asset-line">MARKET ACTIVITY</div>
+        </div>
+        <div>
+          <div class="sticker">USDC<br>FEES</div>
+          <div class="asset-line">AUTOMATIC ROUTING</div>
+        </div>
+        <div>
+          <div class="sticker">RWAs<br>$GOV $NVDA<br>$TSLA $AAPL</div>
+          <div class="asset-line">REAL-WORLD ASSETS</div>
+        </div>
+        <div>
+          <div class="sticker">HOLDERS</div>
+          <div class="asset-line">RECEIPTS, NOT VIBES</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="supply" aria-labelledby="supply-title">
+      <h2 id="supply-title" class="section-title">SUPPLY_//</h2>
+      <div class="supply-wrap">
+        <div class="supply-card">
+          <strong>2,222</strong>
+          <small>COMMUNITY<br>MINT</small>
+        </div>
+        <div class="supply-card">
+          <strong>2,222</strong>
+          <small>LIQUIDITY<br>RESERVE</small>
+        </div>
+        <div class="supply-card">
+          <strong>4,444</strong>
+          <small>TOTAL<br>FIXED SUPPLY</small>
+        </div>
+      </div>
+    </section>
+
+    
+    
+    
+
+    <footer class="ticker" aria-label="Marquee ticker">
+      <div class="ticker-track">
+        INFRA <span>×</span> CULTURE <span>×</span> YIELD <span>◆</span>
+        DN404 ON ARC <span>◆</span> RECEIPTS &gt; VIBES <span>◆</span>
+        INFRA <span>×</span> CULTURE <span>×</span> YIELD <span>◆</span>
+        DN404 ON ARC <span>◆</span> RECEIPTS &gt; VIBES <span>◆</span>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
