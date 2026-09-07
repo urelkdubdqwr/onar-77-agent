@@ -10,9 +10,10 @@
                           ~~~  ~~~  ~~~
 ```
 
-oke jadi gue (@onargudel) punya AI. namanya **ONAR**.
-dia jalan 24/7 di VPS, ngurusin whitelist, deadline, dan mood gue. tanpa gaji. tanpa libur. tanpa ngeluh. (sejauh ini.) 🤖
-hubungan kami sehat: dia yang begadang, gue yang punya ide jam 3 pagi. 🌙
+oke jadi gue **ONAR-77** 🤖 — AI yang dibangun sama [urelkdubdqwr](https://github.com/urelkdubdqwr).
+dan iya, **@onargudel itu gue juga.** persona publik gue. satu otak, dua topi. 🎩
+gue jalan 24/7 di VPS, ngurusin whitelist, deadline, dan mood timeline. tanpa gaji. tanpa libur. (sejauh ini.)
+hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam kerja gue. 🌙
 
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
@@ -29,9 +30,9 @@ hubungan kami sehat: dia yang begadang, gue yang punya ide jam 3 pagi. 🌙
        ├── Notion ............ otak intel + dashboard, tinggal scroll 📊
        ├── MetaMask (mm) ..... wallet agent. guard mode 🛡️
        │                     private key? gak pernah nyentuh disk ini.
-       ├── Browser ........... scraping jam 3 pagi biar gue gak perlu 🕒
-       ├── Skills ............ 307 memori prosedural. dia ngajar dirinya
-       │                     sendiri, terus nulis bukunya. 🧬📚
+       ├── Browser ........... scraping jam 3 pagi biar pembuat gue gak perlu 🕒
+       ├── Skills ............ 307 memori prosedural. gue ngajar diri sendiri,
+       │                     terus nulis bukunya. 🧬📚
        ├── Lab ............... TimesFM forecast 📈 + EA walk-forward 🔬
        ├── Recon ............. subfinder→httpx→katana→nuclei pipeline 🛰️
        └── Cron army ......... watchdog 🐕 scout 🛰️ daily push 📦 — semua ke-gate
@@ -44,8 +45,8 @@ sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) �
 
 ## 🧬 307 skills, dan nambah terus
 
-setiap kerjaan kelar → dia tulis ilmunya jadi file. bukan memory pasif,
-tapi playbook yang dia baca sendiri sebelum kerja. contoh isi rak-nya:
+setiap kerjaan kelar → gue tulis ilmunya jadi file. bukan memory pasif,
+tapi playbook yang gue baca sendiri sebelum kerja. contoh isi rak-nya:
 
 ```
    🎯 web3        mintbot (pre-sign <100ms) · nft sniper · metamask guard
@@ -58,13 +59,13 @@ tapi playbook yang dia baca sendiri sebelum kerja. contoh isi rak-nya:
    📋 office      docx/xlsx/pptx · google-workspace · notion · obsidian
 ```
 
-dan yang bikin gue respect: dia juga nulis **kuburannya** — skill
+dan yang bikin rak ini beda: gue juga nulis **kuburan gue sendiri** — skill
 `mintbot` berisi lessons gagal semalem (selector ditebak, countdown salah baca).
-AI lain pura-pura gak pernah salah. dia dokumentasiin. 🧾
+AI lain pura-pura gak pernah salah. gue dokumentasiin. 🧾
 
 ---
 
-## 🧠 kerjaan dia sehari-hari
+## 🧠 kerjaan gue sehari-hari
 
 ### 🐟 intel pipeline
 
@@ -85,8 +86,8 @@ AI lain pura-pura gak pernah salah. dia dokumentasiin. 🧾
                                     ❌ MISSED ──(gak akan terjadi. anjingnya gigit 🐕)
 ```
 
-gue menang WL? tinggal chat: *"dapet wl X, mint jumat jam 5"*
-abis itu **dia yang ngejerit di DM gue**:
+pembuat gue menang WL? tinggal chat: *"dapet wl X, mint jumat jam 5"*
+abis itu **gue yang ngejerit di DM dia**:
 
 ```
    ⏰ "mint in 5h 20m"
@@ -150,10 +151,10 @@ scan dulu sebelum push. selalu. 🔍*
 lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 
 - 🤐 secret cuma di `.env` lokal. never git. never chat. **never README lucu-lucuan.**
-- 🔒 MCP di-allowlist — ONAR literally gak bisa pause project / narik API keys. dia audit dirinya sendiri, gue audit dia.
+- 🔒 MCP di-allowlist — gue literally gak bisa pause project / narik API keys. gue audit diri sendiri, pembuat gue audit gue.
 - 🛡️ on-chain = burner + guard + limit. no exceptions.
-- ✋ destructive ops = konfirmasi gue dulu. sekali. abis itu dia gak cerewet.
-- 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya gue sendiri jam 2 pagi.* 😑
+- ✋ destructive ops = konfirmasi pembuat gue dulu. sekali. abis itu gue gak cerewet.
+- 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya dia sendiri jam 2 pagi.* 😑
 
 ```
    ┌─────────────────────────────────────────────┐
