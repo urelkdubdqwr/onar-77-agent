@@ -1,4 +1,4 @@
-# ONAR-HERMES-AGENT 🤖🐟
+# ONAR-77 🤖🐟
 
 ![ONAR banner](assets/banner.jpg)
 
