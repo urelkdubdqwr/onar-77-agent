@@ -24,19 +24,43 @@ hubungan kami sehat: dia yang begadang, gue yang punya ide jam 3 pagi. 🌙
    Ubuntu 24.04 VPS 🖥️
    └── ONAR 🧠
        ├── LLM utama ......... private endpoint. rahasia dapur. 😌
-       ├── Telegram .......... command center gue. allowlist only —
+       ├── Telegram + Discord  command center. allowlist only —
        │                     yang bukan gue disuruh nunggu. 🚫🤖
-       ├── Supabase MCP ...... otak intel. destructive tools dikunci 🔒
-       ├── Notion ............ dashboard biar gue tinggal scroll 📊
+       ├── Notion ............ otak intel + dashboard, tinggal scroll 📊
        ├── MetaMask (mm) ..... wallet agent. guard mode 🛡️
        │                     private key? gak pernah nyentuh disk ini.
        ├── Browser ........... scraping jam 3 pagi biar gue gak perlu 🕒
-       ├── Skills ............ 60+ memori prosedural. dia ngajar dirinya sendiri 🧬
-       └── Cron army ....___  watchdog 🐕 scout 🛰️ sync 🔄 — semua ke-gate
+       ├── Skills ............ 307 memori prosedural. dia ngajar dirinya
+       │                     sendiri, terus nulis bukunya. 🧬📚
+       ├── Lab ............... TimesFM forecast 📈 + EA walk-forward 🔬
+       ├── Recon ............. subfinder→httpx→katana→nuclei pipeline 🛰️
+       └── Cron army ......... watchdog 🐕 scout 🛰️ daily push 📦 — semua ke-gate
 ```
 
 dulu sistem ini hidup di **HP Android** (Termux + Debian PRoot, i know 💀).
 sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) 📱➡️🖥️
+
+---
+
+## 🧬 307 skills, dan nambah terus
+
+setiap kerjaan kelar → dia tulis ilmunya jadi file. bukan memory pasif,
+tapi playbook yang dia baca sendiri sebelum kerja. contoh isi rak-nya:
+
+```
+   🎯 web3        mintbot (pre-sign <100ms) · nft sniper · metamask guard
+                  meme-coin audit · chainlink ×4 · scam-audit receipts
+   🐛 security    60+ hunt-* skills (xss, ssrf, idor, jwt, graphql…)
+                  bug-bounty orchestrator · recon pipeline · report-writing
+   📊 research    deep-research · timesfm forecasting · CT-scoring · last30days
+   🎨 creative    hyperframes video · manim · antv infographic · poster render
+   🏗️ dev         gstack 55 (ship/qa/review) · TDD · systematic debugging
+   📋 office      docx/xlsx/pptx · google-workspace · notion · obsidian
+```
+
+dan yang bikin gue respect: dia juga nulis **kuburannya** — skill
+`mintbot` berisi lessons gagal semalem (selector ditebak, countdown salah baca).
+AI lain pura-pura gak pernah salah. dia dokumentasiin. 🧾
 
 ---
 
@@ -45,7 +69,7 @@ sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) �
 ### 🐟 intel pipeline
 
 ```
-   CT noise 🌊 ──> scoring 🧮 ──> Supabase 🗄️ ──> Notion 📊 ──> gue tinggal baca ☕
+   CT noise 🌊 ──> scoring 🧮 ──> Notion 🗄️ ──> dashboard 📊 ──> gue tinggal baca ☕
 ```
 
 - `smartct-OHA` 🧠 — nyimpen siapa yang layak didengerin. reach + rasio follower + kualitas sinyal.
