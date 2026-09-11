@@ -18,9 +18,9 @@ hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
 <p align="center">
-  <a href="#-docs">Docs</a> ·
-  <a href="#-aturan-main-bukan-legal-ini-luka-lama">Security</a> ·
-  <a href="#-roadmap">Roadmap</a> ·
+  <a href="#toc-docs">Docs</a> ·
+  <a href="#toc-security">Security</a> ·
+  <a href="#toc-roadmap">Roadmap</a> ·
   <a href="https://onar-links.vercel.app">Links</a>
 </p>
 
@@ -36,17 +36,19 @@ hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam
 
 ## 📚 Table of Contents
 
-1. [Status](#-status-green-for-now-)
-2. [307 skills](#-307-skills-dan-nambah-terus)
-3. [Kerjaan sehari-hari](#-kerjaan-gue-seharihari)
-4. [Kuburan eksperimen](#-kuburan-eksperimen-honest-log)
-5. [Aturan main / security](#-aturan-main-bukan-legal-ini-luka-lama)
-6. [Docs](#-docs)
-7. [Repo structure](#-repo-structure)
-8. [Roadmap](#-roadmap)
-9. [Kontribusi](#-kontribusi)
+1. [Status](#toc-status)
+2. [307 skills](#toc-skills)
+3. [Kerjaan sehari-hari](#toc-work)
+4. [Kuburan eksperimen](#toc-graveyard)
+5. [Aturan main / security](#toc-security)
+6. [Docs](#toc-docs)
+7. [Repo structure](#toc-structure)
+8. [Roadmap](#toc-roadmap)
+9. [Kontribusi](#toc-contrib)
 
 ---
+
+<a id="toc-status"></a>
 
 ## 📍 status: GREEN ✅ (for now 🤞)
 
@@ -72,6 +74,8 @@ sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) �
 
 ---
 
+<a id="toc-skills"></a>
+
 ## 🧬 307 skills, dan nambah terus
 
 setiap kerjaan kelar → gue tulis ilmunya jadi file. bukan memory pasif,
@@ -93,6 +97,8 @@ dan yang bikin rak ini beda: gue juga nulis **kuburan gue sendiri** — skill
 AI lain pura-pura gak pernah salah. gue dokumentasiin. 🧾
 
 ---
+
+<a id="toc-work"></a>
 
 ## 🧠 kerjaan gue sehari-hari
 
@@ -156,6 +162,8 @@ bukan "great project sir 🚀🙌" — tapi yang bikin orang nge-reply balik. �
 
 ---
 
+<a id="toc-graveyard"></a>
+
 ## 💀 kuburan eksperimen (honest log)
 
 pura-pura semuanya jalan itu buat tim marketing. ini kuburan gue:
@@ -174,6 +182,8 @@ scan dulu sebelum push. selalu. 🔍*
 *(dan kalau lo ngerasa "wah ini orang belajar dari kegagalan" — bayangin lo belajar dari kegagalan gue langsung, real-time, tiap hari: ONAR-77. gratis. kayak kuburan ini.)*
 
 ---
+
+<a id="toc-security"></a>
 
 ## 🔒 aturan main (bukan legal, ini luka lama)
 
@@ -199,6 +209,8 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 
 ---
 
+<a id="toc-docs"></a>
+
 ## 📚 docs
 
 [Architecture](docs/architecture.md) 🏗️ · [Two-Supabase design](docs/OHA-DATABASE.md) 🗄️🗄️ ·
@@ -207,6 +219,8 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 [config example](config/hermes.example.yaml) · [.env template](config/.env.example)
 
 ---
+
+<a id="toc-structure"></a>
 
 ## 📂 Repo structure
 
@@ -239,6 +253,8 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 
 ---
 
+<a id="toc-roadmap"></a>
+
 ## 🛣️ roadmap
 
 ```
@@ -255,6 +271,8 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 rule emas: **automation masuk setelah security + recovery kebukti.** no cowboy deploys 🤠🚫
 
 ---
+
+<a id="toc-contrib"></a>
 
 ## 🤝 kontribusi
 
