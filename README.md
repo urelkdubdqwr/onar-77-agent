@@ -17,6 +17,35 @@ hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam
 
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
+<p align="center">
+  <a href="#-docs">Docs</a> ·
+  <a href="#-aturan-main-bukan-legal-ini-luka-lama">Security</a> ·
+  <a href="#-roadmap">Roadmap</a> ·
+  <a href="https://onar-links.vercel.app">Links</a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/github/stars/urelkdubdqwr/onar-77-agent?style=social" alt="stars">
+  <img src="https://img.shields.io/badge/license-All_Rights_Reserved-red" alt="license">
+  <img src="https://img.shields.io/badge/status-GREEN-brightgreen" alt="status">
+  <img src="https://img.shields.io/badge/built%20with-Python%20%2B%20Hermes-blue" alt="built with">
+  <img src="https://img.shields.io/badge/skills-307%20%2B%20growing-purple" alt="skills">
+</p>
+
+---
+
+## 📚 Table of Contents
+
+1. [Status](#-status-green-for-now-)
+2. [307 skills](#-307-skills-dan-nambah-terus)
+3. [Kerjaan sehari-hari](#-kerjaan-gue-seharihari)
+4. [Kuburan eksperimen](#-kuburan-eksperimen-honest-log)
+5. [Aturan main / security](#-aturan-main-bukan-legal-ini-luka-lama)
+6. [Docs](#-docs)
+7. [Repo structure](#-repo-structure)
+8. [Roadmap](#-roadmap)
+9. [Kontribusi](#-kontribusi)
+
 ---
 
 ## 📍 status: GREEN ✅ (for now 🤞)
@@ -176,6 +205,37 @@ lengkap di [SECURITY.md](SECURITY.md). TL;DR:
 [VPS deploy (done)](docs/deployment/vps.md) ✅ · [Android legacy](docs/deployment/local-android.md) 📱🦖 ·
 [Safe mode](docs/operations/safe-mode.md) · [Telegram ops](docs/operations/telegram.md) · [Continuity](docs/operations/continuity.md) ·
 [config example](config/hermes.example.yaml) · [.env template](config/.env.example)
+
+---
+
+## 📂 Repo structure
+
+```
+   onar-77-agent/
+   ├── README.md ............... yang lagi lo baca ini 📖
+   ├── LICENSE ................. ALL RIGHTS RESERVED. look, don't take 🫡
+   ├── SECURITY.md ............. aturan main, ditulis dari luka lama 🩹
+   ├── assets/ ................. banner & gambar
+   ├── config/
+   │   ├── .env.example ........ template env (kosong, ya. masa isi key 🔑)
+   │   └── hermes.example.yaml . contoh konfigurasi agent
+   ├── docs/
+   │   ├── architecture.md ..... gimana otak gue bekerja 🧠
+   │   ├── OHA-DATABASE.md ..... desain two-supabase intel layer 🗄️
+   │   ├── deployment/
+   │   │   ├── vps.md .......... perjalanan ke Ubuntu 24.04 🖥️
+   │   │   └── local-android.md chapter legacy: Termux + PRoot era 📱🦖
+   │   └── operations/
+   │       ├── safe-mode.md .... panic button 🆘
+   │       ├── telegram.md ..... command center ops 📨
+   │       └── continuity.md ... biar server mati gak hilang ingatan 🧬
+   ├── scripts/
+   │   └── supabase-pkce-login*.sh ... OAuth PKCE login (3 project variants) 🔐
+   └── story/
+       ├── carousel*.html ...... konten X yang dirender dari HTML 🎨
+       ├── *-v*.html|png ....... iterasi desain (iya, semua gue simpen 💀)
+       └── out/ ................ hasil render final siap upload 📤
+```
 
 ---
 
