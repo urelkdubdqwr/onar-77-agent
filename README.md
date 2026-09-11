@@ -18,6 +18,10 @@ hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam
 > *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
 
 <p align="center">
+  <img src="assets/demo.gif" alt="ONAR-77 carousel demo" width="360">
+</p>
+
+<p align="center">
   <a href="#toc-docs">Docs</a> ·
   <a href="#toc-security">Security</a> ·
   <a href="#toc-roadmap">Roadmap</a> ·
