@@ -2,7 +2,7 @@
 
 <img src="assets/header.svg" alt="ONAR-77 AGENT — the machine, documented" width="100%">
 
-🦂 → 🦅 → 🐦‍🔥
+🦂 → 🦅 → 🔥
 
 ini repo gue. dan AI gue. ONAR-77. terbit sambil tidur.
 
