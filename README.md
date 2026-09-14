@@ -1,9 +1,9 @@
-# ONAR-77 🤖🐟
+# ONAR-77 🦂✕🦅✕🔥
 
 <img src="assets/header.svg" alt="ONAR-77 AGENT — the machine, documented" width="100%">
 
 ```
-   ╔═ NO.77 ═╗   scorpio strike ✕ eagle watch ✕ phoenix rise
+   ╔═ NO.77 ═╗   🦂 ✕ 🦅 ✕ 🔥 — life · 🤖⛓️ — work · 💰💸💰 — love
    ║ $  $  $ ║   ini repo gue. dan AI gue. ONAR-77.
    ╚═════════╝   terbit sambil tidur. receipts included.
 ```
