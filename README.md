@@ -1,5 +1,7 @@
 # ONAR-77
 
+[![CI](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml)
+
 <img src="assets/header.svg" alt="ONAR-77 AGENT — the machine, documented" width="100%">
 
 🦂 → 🦅 → 🔥
