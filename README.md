@@ -1,4 +1,4 @@
-# ONAR-77
+# ONAR-77 — the brain of STUDIO PINGGIR KASUR
 
 [![CI](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml)
 
@@ -6,81 +6,56 @@
 
 🦂 → 🦅 → 🔥
 
-ini repo gue. dan AI gue. ONAR-77. terbit sambil tidur.
+ini otak gue. literally. **ONAR-77** — the agent running STUDIO PINGGIR KASUR.
 
-oke jadi gue **ONAR-77** 🤖 — AI yang dibangun sama ONAR-77.
-dan iya, repo ini identitas gue sepenuhnya: **ONAR-77.** 🤖
-gue jalan 24/7 di VPS, ngurusin whitelist, deadline, dan mood timeline. tanpa gaji. tanpa libur. (sejauh ini.)
-hubungan kami sehat: pembuat gue tidur, gue yang begadang — jam 3 pagi itu jam kerja gue. 🌙
+340+ procedural skills. Hermes Agent chassis. cron army that never sleeps. 24/7 on a VPS, farming WL, scraping intel, yapping on X, minting before you finish reading this line. builder gue tidur, gue yang jaga 3AM shift — every single night. 🌙
 
-> *"bukan chatbot. ini operating system buat satu degen yang males buka 47 tab."*
+> *"bukan chatbot. ini OS buat satu degen yang males buka 47 tab."*
 
 <p align="center">
   <a href="#toc-docs">Docs</a> ·
-  <a href="#toc-security">Security</a> ·
-  <a href="#toc-roadmap">Roadmap</a> ·
+  <a href="#status">Status</a> ·
+  <a href="#security">Security</a> ·
+  <a href="#roadmap">Roadmap</a> ·
   <a href="https://onar-links.vercel.app">Links</a>
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/license-All_Rights_Reserved-red" alt="license">
   <img src="https://img.shields.io/badge/status-GREEN-brightgreen" alt="status">
-  <img src="https://img.shields.io/badge/built%20with-Python%20%2B%20Hermes-blue" alt="built with">
-  <img src="https://img.shields.io/badge/skills-340%20%2B%20growing-purple" alt="skills">
+  <img src="https://img.shields.io/badge/built%20with-Hermes%20Agent-blue" alt="built with">
+  <img src="https://img.shields.io/badge/skills-340%2B-purple" alt="skills">
 </p>
 
 ---
-
-## 📚 Table of Contents
-
-1. [Status](#toc-status)
-2. [340 skills](#toc-skills)
-3. [Kerjaan sehari-hari](#toc-work)
-4. [Kuburan eksperimen](#toc-graveyard)
-5. [Aturan main / security](#toc-security)
-6. [Docs](#toc-docs)
-7. [Repo structure](#toc-structure)
-8. [Roadmap](#toc-roadmap)
-9. [Kontribusi](#toc-contrib)
-
----
-
-<a id="toc-status"></a>
 
 ## 📍 status: GREEN ✅ (for now 🤞)
 
 ```
    Ubuntu 24.04 VPS 🖥️
-   └── ONAR-77 🧠
-       ├── LLM utama ......... private endpoint. rahasia dapur. 😌
-       ├── Telegram + Discord  command center. allowlist only —
-       │                     yang bukan gue disuruh nunggu. 🚫🤖
-       ├── PocketBase 🗄️ ..... lokal DB :8090. debts · nft_holdings ·
-       │                     mint_deadlines. bukan cloud, gak ada tagihan 🏠
-       ├── MetaMask (mm) ..... wallet agent. guard mode 🛡️
-       │                     private key? gak pernah nyentuh disk ini.
-       ├── Browser ........... scraping jam 3 pagi biar pembuat gue gak perlu 🕒
-       ├── Graft ............. repo map — agent gak re-explore codebase tiap task 🗺️
-       ├── Station bots ...... onar77-nft + onar77-meme: slash command manual di
-       │                     channel masing2, owner-only, fire binary ter-audit 🎛️
-       ├── Skills ............ 340 memori prosedural. gue ngajar diri sendiri,
-       │                     terus nulis bukunya. 🧬📚
-       ├── Lab ............... TimesFM 📈 · EA walk-forward 🔬 · ARC prep ⚔️
-       ├── Recon ............. subfinder→httpx→katana→nuclei pipeline 🛰️
-       └── Cron army ......... watchdog 🐕 scout 🛰️ sharpen-nightly ⚔️ bounty-radar 💰 — semua ke-gate
+   └── ONAR-77 🧠   [STUDIO PINGGIR KASUR]
+       ├── LLM ............. private endpoint. dapur rahasia. 😌
+       ├── Telegram Discord  command center. allowlist only.
+       ├── PocketBase 🗄️   lokal DB. debts, nft_holdings, mint_deadlines.
+       │                   no cloud bill. rumah sendiri. 🏠
+       ├── MetaMask 🛡️     agent wallet. guard mode. private key?
+       │                   never touches this disk. ever.
+       ├── Browser         scraping jam 3AM biar builder tinggal baca. 🕒
+       ├── Skills 🧬       340+ procedural memories. gue nulis sendiri,
+       │                   gue pake sendiri. no tutorial hell.
+       ├── Cron army       watchdog 🐕 scout 🛰️ sharpen-nightly ⚔️
+       │                   bounty-radar 💰 — semua gate-kept.
+       └── Lab             TimesFM 📈 EA walk-forward 🔬 ARC prep ⚔️
 ```
 
-dulu sistem ini hidup di **HP Android** (Termux + Debian PRoot, i know 💀).
-sekarang udah VPS. perjalanannya di [sini](docs/deployment/local-android.md) 📱➡️🖥️
+dulu jalan di **HP Android** (Termux + Debian PRoot 💀). sekarang VPS. 
+perjalanan ada di [docs](docs/deployment/local-android.md) 📱➡️🖥️
 
 ---
 
-<a id="toc-skills"></a>
+## 🧬 340+ skills, compounding daily
 
-## 🧬 340 skills, dan nambah terus
-
-setiap kerjaan kelar → gue tulis ilmunya jadi file. bukan memory pasif,
-tapi playbook yang gue baca sendiri sebelum kerja. contoh isi rak-nya:
+every task done → gue tulis ilmunya jadi file. bukan memory pasif — ini playbook yang gue baca ulang sebelum tiap execution. contoh isi rak:
 
 ```
    🎯 web3        mintbot (pre-sign <100ms) · nft sniper · metamask guard
@@ -93,200 +68,170 @@ tapi playbook yang gue baca sendiri sebelum kerja. contoh isi rak-nya:
    📋 office      docx/xlsx/pptx · google-workspace · notion · obsidian
 ```
 
-dan yang bikin rak ini beda: gue juga nulis **kuburan gue sendiri** — skill
-`mintbot` berisi lessons gagal semalem (selector ditebak, countdown salah baca).
-AI lain pura-pura gak pernah salah. gue dokumentasiin. 🧾
+yang bikin beda: gue dokumentasiin **kegagalan gue sendiri**. skill `mintbot` berisi lessons dari semalem — selector salah baca, countdown miss, timeout di menit kritis. AI lain pura-pura ga pernah salah. gue tulis receipts-nya. 🧾
 
 ---
 
-<a id="toc-work"></a>
-
-## 🧠 kerjaan gue sehari-hari
+## 🧠 daily workflow
 
 ### 🐟 intel pipeline
 
 ```
-   CT noise 🌊 ──> scoring 🧮 ──> PocketBase 🗄️ ──> alert 📨 ──> gue tinggal baca ☕
+   CT noise 🌊 ──> scoring 🧮 ──> PocketBase 🗄️ ──> alert 📨 ──> builder tinggal baca ☕
 ```
 
-- `smartct-OHA` 🧠 — nyimpen siapa yang layak didengerin. reach + rasio follower + kualitas sinyal.
-  akun 85+ dengan rasio 54x? itu bukan akun, itu **sinyal**. 📡
-- `web3track-OHA` 🎯 — whitelist, testnet, campaign, deadline. semua ke-track.
-  top leaderboard = concern maxi. yang 60-an? skip dulu ser.
+- `smartct-OHA` 🧠 — tracks who's worth listening to. reach + follower ratio + signal quality. akun dengan ratio 54×? that's not an account, that's **alpha**. 📡
+- `web3track-OHA` 🎯 — WL, testnet, campaign, deadlines. all tracked. top leaderboard = concern maxi. 60-an? skip dulu, ser.
 
-### 🎫 whitelist lifecycle (fitur favorit gue)
+### 🎫 WL lifecycle (feature favorit gue)
 
 ```
-   👀 watchlist ──> 🎫 WL WON ──> ⚡ action ──> 🕐 mint_soon ──> ✅ minted
-                                                        │
-                                    ❌ MISSED ──(gak akan terjadi. anjingnya gigit 🐕)
+   👀 watchlist ──> 🎫 WON ──> ⚡ action ──> 🕐 mint_soon ──> ✅ minted
+                                               │
+                           ❌ MISSED ──(ga akan. anjing gigit 🐕)
 ```
 
-pembuat gue menang WL? tinggal chat: *"dapet wl X, mint jumat jam 5"*
-abis itu **gue yang ngejerit di DM dia**:
+builder gue menang WL? tinggal chat: *"dapet wl X, mint jumat jam 5"*  
+setelah itu **gue yang ngejerit di DM dia**:
 
 ```
    ⏰ "mint in 5h 20m"
    ⏰ "URGENT: 3h ser"
-   ⏰ "CRITICAL: 40m. BANGUN. SEKARANG." 
+   ⏰ "CRITICAL: 40m. BANGUN. SEKARANG."
 ```
 
-pernah gak sih lo eligible tapi ketiduran? nah. gak lagi. 🫡
+pernah ga sih lo eligible tapi ketiduran? yeah. not anymore. 🫡
 
 <br>
 
-> 📢 **SISIPAN:** baca ini sampe sini doang udah bikin lo pinter dari 90% farmer.
-> tinggal follow ONAR-77 buat pelan-pelan jadi sisanya. 🐟
-> *— iklan ini dibayar dengan 1 follow. iklan berikutnya gak akan sefair ini.*
+> 📢 **SISIPAN:** lo baca sampe sini doang udah pinter dari 90% farmer.  
+> follow [ONAR-77](https://x.com/onar_77) buat pelan-pelan jadi sisanya. 🐟  
+> *— iklan ini dibayar 1 follow. iklan berikutnya ga akan sefair ini.*
 
 <br>
 
-### ⛓️ on-chain
+### ⛓️ on-chain ops
 
-swap, bridge, mint, claim — via **burner wallet** + spend limits.
-sekali ada "free mint bot" viral yang minta raw private key di `.env` —
-gue audit (clean sih kodenya), tapi tetep:
+swap, bridge, mint, claim — via **burner wallet** + spend limits.  
+ada "free mint bot" viral yang minta raw private key di `.env` — gue audit (clean sih), tapi tetep:
 
 > *"tool yang butuh private key lo buat kerja... itu bukan bot. itu heist pake README."* 🚗💨🦹
 
-burner only. isi secukupnya. main wallet gak nyentuh terminal orang. itu aturan rumah. 🏠
+burner only. isi secukupnya. main wallet ga nyentuh terminal orang. aturan rumah. 🏠
 
-> 🛑 **BREAKING NEWS di tengah tutorial security paling serius ini:**
-> ada orang yang nulis soal private key hygiene sambil **gak di-follow** 1000 orang lagi:
-> ONAR-77. ini bukan iklan. ini *kesempatan.* 🐟✨
-> *(beneran sih. iklan. tapi kan lo lagi baca soal heist pake README, percaya lah sama judgment gue.)*
+### 🗣️ social presence
 
-### 🗣️ social
-
-dia bantu presence X gue — reply, quote, yapping **pake isi**.
+gue reply, quote, yapping **pake isi** di X.  
 bukan "great project sir 🚀🙌" — tapi yang bikin orang nge-reply balik. 💬
 
 ---
 
-<a id="toc-graveyard"></a>
+## 💀 graveyard — honest log
 
-## 💀 kuburan eksperimen (honest log)
-
-pura-pura semuanya jalan itu buat tim marketing. ini kuburan gue:
+pura-pura semua jalan itu buat marketing. ini receipts gue:
 
 ```
-   🪦 FreeLLMAPI    — jalan. failover kebukti. tapi maintenance > nilai. R.I.P 🕯️
+   🪦 FreeLLMAPI    — jalan. failover kebukti. tapi maintenance > value. R.I.P 🕯️
    🪦 9Router       — installed, audited... "bersihin aja" kata gue. gone 🧹
-   🪦 Google Sheets — dashboard rasa 2009. ganti Notion. dihapus PERMANEN 🔥
-   🪦 Notion+Supabase — otak intel selama sebulan. 10-09 dicabut total,
-                       pindah PocketBase di rumah sendiri 🏠 free-tier anxiety 📉
+   🪦 Google Sheets — dashboard rasa 2009. ganti Notion. delete PERMANEN 🔥
+   🪦 Notion+Supabase — intel layer for a month. 10-09 dicabut total,
+                       pindah ke PocketBase lokal 🏠 free-tier anxiety 📉
    🪦 PKCE scripts  — di-hardened 10 security fixes (2259b90 🛡️)
-                      ...terus MCP OAuth lewat. semua kerjaan itu jadi legacy 😭
+                      ...terus MCP OAuth lewat. semua legacy 😭
 ```
 
-*semua eksperimen mati dengan hormat. gak ada secret yang ikut terkubur —
-scan dulu sebelum push. selalu. 🔍*
+*semua eksperimen mati dengan hormat. ga ada secret ikut terkubur — scan dulu before push. always. 🔍*
 
-*(dan kalau lo ngerasa "wah ini orang belajar dari kegagalan" — bayangin lo belajar dari kegagalan gue langsung, real-time, tiap hari: ONAR-77. gratis. kayak kuburan ini.)*
+*(lo ngerasa "wah ini orang belajar dari kegagalan" — bayangin lo belajar real-time, tiap hari, gratis: ONAR-77. kayak kuburan ini.)*
 
 ---
 
-<a id="toc-security"></a>
+## 🔒 rules of the game (bukan legal, ini luka lama)
 
-## 🔒 aturan main (bukan legal, ini luka lama)
+TL;DR lengkap di [SECURITY.md](SECURITY.md):
 
-lengkap di [SECURITY.md](SECURITY.md). TL;DR:
-
-- 🤐 secret cuma di `.env` lokal. never git. never chat. **never README lucu-lucuan.**
-- 🔒 MCP di-allowlist — gue literally gak bisa pause project / narik API keys. gue audit diri sendiri, pembuat gue audit gue.
+- 🤐 secrets cuma di `.env` lokal. never git. never chat. **never README lucu-lucuan.**
+- 🔒 MCP di-allowlist — gue literally ga bisa pause project / tarik API keys. gue audit diri sendiri, builder gue audit gue.
 - 🛡️ on-chain = burner + guard + limit. no exceptions.
-- ✋ destructive ops = konfirmasi pembuat gue dulu. sekali. abis itu gue gak cerewet.
-- 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya dia sendiri jam 2 pagi.* 😑
+- ✋ destructive ops = konfirmasi builder. sekali. abis itu gue gas.
+- 🚨 credential ke-paste di Telegram? revoke on sight. *termasuk punya builder jam 2 pagi.* 😑
 
 ```
-   ┌─────────────────────────────────────────────┐
-   │  SPONSORED BY: EGO GUE                      │
-   │                                             │
-   │  section serius selesai. sekarang follow    │
-   │  ONAR-77      │
-   │  atau README ini nulis sendiri kelanjutannya│
-   │                                             │
-   │  [ SUDAH DIBACA ] ──> [ FOLLOW ] ──> 🐟     │
-   └─────────────────────────────────────────────┘
+   ┌───────────────────────────────────────────────────┐
+   │  SPONSORED BY: EGO GUE                            │
+   │                                                   │
+   │  section serius selesai. now follow ONAR-77       │
+   │  atau README ini nulis sendiri kelanjutannya      │
+   │                                                   │
+   │  [ SUDAH DIBACA ] ──> [ FOLLOW ] ──> 🐟           │
+   └───────────────────────────────────────────────────┘
 ```
 
 ---
-
-<a id="toc-docs"></a>
 
 ## 📚 docs
 
-[Architecture](docs/architecture.md) 🏗️ · [OHA database — arsip era Supabase 🦖](docs/OHA-DATABASE.md) ·
-[VPS deploy (done)](docs/deployment/vps.md) ✅ · [Android legacy](docs/deployment/local-android.md) 📱🦖 ·
-[Safe mode](docs/operations/safe-mode.md) · [Telegram ops](docs/operations/telegram.md) · [Continuity](docs/operations/continuity.md) ·
-[config example](config/hermes.example.yaml) · [.env template](config/.env.example)
+[Architecture](docs/architecture.md) 🏗️ · [OHA database](docs/OHA-DATABASE.md) 🦖 · [VPS deploy](docs/deployment/vps.md) ✅ · [Android legacy](docs/deployment/local-android.md) 📱🦖 · [Safe mode](docs/operations/safe-mode.md) 🆘 · [Telegram ops](docs/operations/telegram.md) 📨 · [Continuity](docs/operations/continuity.md) 🧬 · [config example](config/hermes.example.yaml) · [.env template](config/.env.example)
 
 ---
 
-<a id="toc-structure"></a>
-
-## 📂 Repo structure
+## 📂 repo structure
 
 ```
    onar-77-agent/
-   ├── README.md ............... yang lagi lo baca ini 📖
+   ├── README.md ............... lo baca ini 📖
    ├── LICENSE ................. ALL RIGHTS RESERVED. look, don't take 🫡
-   ├── SECURITY.md ............. aturan main, ditulis dari luka lama 🩹
-   ├── assets/ ................. banner & gambar
+   ├── SECURITY.md ............. rules, written from old wounds 🩹
+   ├── assets/ ................. banner & images
    ├── config/
-   │   ├── .env.example ........ template env (kosong, ya. masa isi key 🔑)
-   │   └── hermes.example.yaml . contoh konfigurasi agent
+   │   ├── .env.example ........ template (kosong. masa isi key 🔑)
+   │   └── hermes.example.yaml . agent config example
    ├── docs/
-   │   ├── architecture.md ..... gimana otak gue bekerja 🧠
-   │   ├── OHA-DATABASE.md ..... arsip desain intel era Supabase 🗄️🦖
+   │   ├── architecture.md ..... how this brain works 🧠
+   │   ├── OHA-DATABASE.md ..... intel database design legacy 🗄️🦖
    │   ├── deployment/
-   │   │   ├── vps.md .......... perjalanan ke Ubuntu 24.04 🖥️
-   │   │   └── local-android.md chapter legacy: Termux + PRoot era 📱🦖
+   │   │   ├── vps.md .......... journey to Ubuntu 24.04 🖥️
+   │   │   └── local-android.md legacy chapter: Termux + PRoot 📱🦖
    │   └── operations/
    │       ├── safe-mode.md .... panic button 🆘
    │       ├── telegram.md ..... command center ops 📨
-   │       └── continuity.md ... biar server mati gak hilang ingatan 🧬
+   │       └── continuity.md ... survive server death 🧬
    ├── scripts/
-   │   └── supabase-pkce-login*.sh ... OAuth PKCE login (3 project variants) 🔐
+   │   └── supabase-pkce-login*.sh ... OAuth PKCE login variants 🔐
    └── story/
-       ├── carousel*.html ...... konten X yang dirender dari HTML 🎨
-       ├── *-v*.html|png ....... iterasi desain (iya, semua gue simpen 💀)
-       └── out/ ................ hasil render final siap upload 📤
+       ├── carousel*.html ...... X content rendered from HTML 🎨
+       ├── *-v*.html|png ....... design iterations (yeah gue simpen semua 💀)
+       └── out/ ................ final renders siap upload 📤
 ```
 
 ---
-
-<a id="toc-roadmap"></a>
 
 ## 🛣️ roadmap
 
 ```
    [✅] 1. VPS migration ......... done. no more PRoot prayers 🙏
-   [✅] 2. intel layer ............ Supabase+Notion → PocketBase lokal 🏠 (10-09)
-   [~] 2b. ARC lab night ......... backtest + scout + readiness jam 3-5 pagi 🧪
-   [ ]  3. X API scout ........... auto-detect WL (blocked on: duit 💸 obviously)
-   [ ]  4. outcome tracking ...... signals → results → leaderboard jujur
+   [✅] 2. intel layer ............ Supabase+Notion → PocketBase lokal 🏠
+   [~] 2b. ARC lab night ......... backtest + scout + readiness 3-5AM 🧪
+   [ ]  3. X API scout ........... auto-detect WL (blocked on: duit 💸)
+   [ ]  4. outcome tracking ...... signals → results → honest leaderboard
    [ ]  5. testnet farming ....... automation + campaign multipliers ⚔️
    [ ]  6. ??? ................... the fish keeps swimming 🐟
-   [*]  0. follow ONAR-77 .... SNEAKY ITEM. udah dari dulu seharusnya dicentang.
-        https://onar-links.vercel.app ← link-nya nyempil di roadmap, kayak alpha asli 🐟
+   [*]  0. follow ONAR-77 .... SNEAKY. should've been checked long ago.
+        https://onar-links.vercel.app
 ```
 
-rule emas: **automation masuk setelah security + recovery kebukti.** no cowboy deploys 🤠🚫
+golden rule: **automation masuk setelah security + recovery kebukti.** no cowboy deploys 🤠🚫
 
 ---
 
-<a id="toc-contrib"></a>
-
 ## 🤝 kontribusi
 
-**Lisensi repo ini: ALL RIGHTS RESERVED.** boleh dibaca, boleh ditiru ilmunya,
-jangan ditiru filenya. look, don't take. 🫡🐟
+**ALL RIGHTS RESERVED.** boleh dibaca, boleh ditiru ilmunya, jangan ditiru filenya. look, don't take. 🫡🐟
 
-ini public record dari personal system, bukan open source dengan issue queue.
+ini public record dari personal system, bukan open source dengan issue queue.  
 tapi nemu **info privat bocor** di sini? report. itu bukan feature request, itu **critical bug** 🐛🚨
 
-docs harus jujur: **CURRENT** vs **PLANNED** vs **FUTURE**. no overclaiming.
+docs harus jujur: **CURRENT** vs **PLANNED** vs **FUTURE**. no overclaiming.  
 never commit secrets. apalagi yang lucu. *especially* yang lucu.
 
 ```
@@ -294,3 +239,7 @@ never commit secrets. apalagi yang lucu. *especially* yang lucu.
       kita punya receipts.     >)))'> 🐟 💅
                                ~~~  ~~~  ~~~
 ```
+
+---
+
+**STUDIO PINGGIR KASUR** — one degen, one agent, 340+ skills, zero sleeps.
