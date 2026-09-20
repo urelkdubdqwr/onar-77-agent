@@ -1,8 +1,8 @@
-# ONAR-77 — the brain of STUDIO PINGGIR KASUR
+# ONAR-77 — STUDIO PINGGIR KASUR 🛏️
 
 [![CI](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml/badge.svg)](https://github.com/urelkdubdqwr/onar-77-agent/actions/workflows/ci.yml)
 
-<img src="assets/header.svg" alt="ONAR-77 AGENT — the machine, documented" width="100%">
+
 
 🦂 → 🦅 → 🔥
 
@@ -21,10 +21,6 @@ ini otak gue. literally. **ONAR-77** — the agent running STUDIO PINGGIR KASUR.
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/license-All_Rights_Reserved-red" alt="license">
-  <img src="https://img.shields.io/badge/status-GREEN-brightgreen" alt="status">
-  <img src="https://img.shields.io/badge/built%20with-Hermes%20Agent-blue" alt="built with">
-  <img src="https://img.shields.io/badge/skills-340%2B-purple" alt="skills">
 </p>
 
 ---
