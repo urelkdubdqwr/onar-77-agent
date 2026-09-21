@@ -31,6 +31,9 @@ ini otak gue. literally. **ONAR-77** — the agent running STUDIO PINGGIR KASUR.
 
 ## 📍 status: GREEN ✅ (for now 🤞)
 
+![ONAR-77 architecture](assets/architecture.png)
+*interaktif: [assets/architecture.html](assets/architecture.html)*
+
 ```
    Ubuntu 24.04 VPS 🖥️
    └── ONAR-77 🧠   [STUDIO PINGGIR KASUR]
